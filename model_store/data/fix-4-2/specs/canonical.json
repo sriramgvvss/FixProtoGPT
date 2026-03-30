@@ -1,0 +1,8312 @@
+[
+  {
+    "kind": "raw_text",
+    "tag": null,
+    "name": "pdf_page",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "as it is represented in the Trading Crowd; any portion not so executed is to be\ncanceled. Not to be confused with Fill or Kill. [TimeInForce]\nLimit or Better Indicates an order to\n- buy a security at the indicated limit price or lower, or to\n- sell a security at the indicated limit price or higher. [OrdType]\nLimit With or Without An order to be executed at a limit price, with or without round-lot sales; valid\nonly for odd lot orders. [OrdType]\nMarket Indicates an order to buy or sell a stated amount of a security at the most\nadvantageous price obtainable after the order is represented in the Trading\nCrowd. [OrdType]\nMarket On Close A round-lot order to be executed at - or as near to as practical - the close of\nthe market. [OrdType]\nMarket Or Better Indicates an order to buy or sell a stated amount of a security at the quoted\nmarket or better. [OrdType]\nOn Close An odd-lot order to buy or sell to be filled at the price of the closing round-lot\noffer\n- plus the differential, for a buy order, or\n- minus the differential, for a sell order,\nor\nA crossing session order to buy or sell at the closing price. [OrdType]\nSell Plus A round-lot market order to sell \u201cplus\u201d is an order to sell a stated amount of a\nstock provided that its price is:\n- not lower than the last sale if the last sale was a \u201cplus\u201d or \u201czero plus\u201d tick\nand\n- not lower than the last sale minus the minimum fractional change in the stock\nif the last sale was a \u201cminus\u201d or \u201czero minus\u201d tick.\nA limit-price order to sell \u201cplus\u201d also states the lowest price at which it can be\nexecuted. [OrdType]\nSell Short An order to sell a security that the seller does not own; a sale effected by\ndelivering a security borrowed by, or for the account of, the seller. Can only\nbe executed on a \u201cplus\u201d or \u201czero plus\u201d tick. [OrdType]\nSell Short Exempt Short sale exempt from short-sale rules. [OrdType]\nStop A stop order to buy which becomes a market order when the security trades at\n- or above - the stop price after the order is represented in the Trading Crowd.\nA stop order to sell which becomes a market order when the security trades at\n- or below - the stop price after the order is represented in the Trading Crowd.\n[OrdType]\nStop Limit A stop order to buy which becomes a limit order at the limit price when the\nsecurity trades at - or above - the stop price after the order is represented in\nthe Trading Crowd. A stop order to sell which becomes a limit order at the\nlimit price when the security trades at - or below- the stop price after the order\nis represented in the Trading Crowd. [OrdType]\nJanuary 24, 2000 280 FIX4.2",
+    "values": {},
+    "children": [],
+    "source": "pdf:FIX-4.2-Technical-Addendum-Time-Precision.pdf,pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 1
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 8,
+    "name": "BeginString",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": true,
+    "description": "Identifies beginning of new message and protocol",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 9,
+    "name": "BodyLength",
+    "msg_type": null,
+    "data_type": null,
+    "required": true,
+    "description": "Message length, in bytes, forward to the CheckSum\nfield. ALWAYS SECOND FIELD IN MESSAGE.\n(Always unencrypted)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 35,
+    "name": "MsgType",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": true,
+    "description": "Defines message type. ALWAYS THIRD FIELD IN",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 49,
+    "name": "SenderCompID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify firm sending message.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 56,
+    "name": "TargetCompID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify receiving firm.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 115,
+    "name": "OnBehalfOfCompID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify firm originating",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 128,
+    "name": "DeliverToCompID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify the firm targeted to",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 90,
+    "name": "SecureDataLen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Required to identify length of encrypted section of message. (Always\nunencrypted)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 91,
+    "name": "SecureData",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "Actual encrypted data stream",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 34,
+    "name": "MsgSeqNum",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "(Can be embedded within encrypted data section.)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 50,
+    "name": "SenderSubID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify specific message",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 142,
+    "name": "SenderLocationID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify specific message",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 57,
+    "name": "TargetSubID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify specific individual or",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 143,
+    "name": "TargetLocationID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify specific message",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 116,
+    "name": "OnBehalfOfSubID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify specific message",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 144,
+    "name": "OnBehalfOfLocationID",
+    "msg_type": null,
+    "data_type": null,
+    "required": false,
+    "description": "Trading partner LocationID (i.e. geographic location and/or desk)\nused when delivering messages via a third party. (Can be embedded\nwithin encrypted data section.)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 129,
+    "name": "DeliverToSubID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify specific message",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 145,
+    "name": "DeliverToLocationID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify specific message",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 25
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 43,
+    "name": "PossDupFlag",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates possible retransmission of message with this",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 26
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 97,
+    "name": "PossResend",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates that message may contain information that has",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 26
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 52,
+    "name": "SendingTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Time of message transmission (always expressed in",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 26
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 122,
+    "name": "OrigSendingTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Original time of message transmission (always",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 26
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 212,
+    "name": "XmlDataLen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 26
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 213,
+    "name": "XmlData",
+    "msg_type": null,
+    "data_type": "MARCH",
+    "required": false,
+    "description": "1, 2000May 1, 2001 193 FIX 4.2 with Errata 20010501",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 26
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 347,
+    "name": "MessageEncoding",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Type of message encoding (non-ASCII (non-English)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 26
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 369,
+    "name": "LastMsgSeqNumProces\nsed",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 26
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 370,
+    "name": "OnBehalfOfSendingTi\nme",
+    "msg_type": null,
+    "data_type": "UTCTIM\nESTAMP",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 26
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 93,
+    "name": "SignatureLength",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Required when trailer contains signature. Note: Not to be included\nwithin SecureData field",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 27
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 89,
+    "name": "Signature",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "Electronic signature",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 27
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 10,
+    "name": "CheckSum",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Three byte, simple checksum (see Appendix B:",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 27
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 112,
+    "name": "TestReqID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Identifier included in Test Request message to be",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 28
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 98,
+    "name": "EncryptMethod",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "(Always unencrypted)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 29
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 108,
+    "name": "HeartBtInt",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Note same value used by both sides",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 29
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 95,
+    "name": "RawDataLength",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Required for some authentication methods",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 29
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 96,
+    "name": "RawData",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "Unformatted raw data, can include bitmaps, word",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 29
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 141,
+    "name": "ResetSeqNumFlag",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates that the both sides of the FIX session should",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 29
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 383,
+    "name": "MaxMessageSize",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Can be used to specify the maximum number of bytes\nsupported for messages received",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 29
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 384,
+    "name": "NoMsgTypes",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Specifies the number of repeating MsgTypes specified",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 29
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 7,
+    "name": "BeginSeqNo",
+    "msg_type": null,
+    "data_type": null,
+    "required": true,
+    "description": "Message sequence number of first message in range to\nbe resent",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 32
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 16,
+    "name": "EndSeqNo",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 32
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 4,
+    "name": "Tag",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 33
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 6,
+    "name": "Incorrect",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 33
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 45,
+    "name": "RefSeqNum",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "MsgSeqNum of rejected message",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 34
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 371,
+    "name": "RefTagID",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "The tag number of the FIX field being referenced.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 34
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 372,
+    "name": "RefMsgType",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "The MsgType of the FIX message being referenced.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 34
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 373,
+    "name": "SessionRejectReason",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Code to identify reason for a session-level Reject message.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 34
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 58,
+    "name": "Text",
+    "msg_type": null,
+    "data_type": "THIS",
+    "required": false,
+    "description": "is a test",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 34
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 354,
+    "name": "EncodedTextLen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Must be set if EncodedText field is specified and must immediately\nprecede it.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 34
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 355,
+    "name": "EncodedText",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "Encoded (non-ASCII characters) representation of the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 34
+    }
+  },
+  {
+    "kind": "message",
+    "tag": null,
+    "name": "March",
+    "msg_type": "4",
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 35
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 36,
+    "name": "NewSeqNo",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 36
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 2,
+    "name": "AdvId",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": true,
+    "description": "Unique identifier of advertisement message.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 5,
+    "name": "AdvTransType",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": true,
+    "description": "Identifies advertisement message transaction type",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 3,
+    "name": "AdvRefID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Reference identifier used with CANCEL and REPLACE",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 55,
+    "name": "Symbol",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Ticker symbol",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 65,
+    "name": "SymbolSfx",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Additional information about the security (e.g.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 48,
+    "name": "SecurityID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "CUSIP or other alternate security identifier",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 22,
+    "name": "IDSource",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Identifies class of alternative SecurityID",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 167,
+    "name": "SecurityType",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Indicates type of security (ISITC spec)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 200,
+    "name": "MaturityMonthYear",
+    "msg_type": null,
+    "data_type": "MONTH-\nYEAR",
+    "required": false,
+    "description": "For Options or Futures to specify Specifiesthe month and year of\nmaturity. Required if MaturityDay is specified.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 205,
+    "name": "MaturityDay",
+    "msg_type": null,
+    "data_type": "DAY-OF-\nMONTH",
+    "required": false,
+    "description": "For Options or Futures and cCan be used in conjunction with\nMaturityMonthYear to specify a particular maturity date.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 201,
+    "name": "PutOrCall",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "For Options.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 202,
+    "name": "StrikePrice",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Strike Price for an Option.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 206,
+    "name": "OptAttribute",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Can be used for SecurityType=OPT to identify a",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 231,
+    "name": "ContractMultiplier",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "For Fixed Income, Convertible Bonds, Derivatives, etc. Note: If used,\nquantities should be expressed in the \"nominal\" (e.g. contracts vs.\nshares) amount.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 223,
+    "name": "CouponRate",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "For Fixed Income.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 207,
+    "name": "SecurityExchange",
+    "msg_type": null,
+    "data_type": "EXCHANG",
+    "required": false,
+    "description": "Market used to help identify a security.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 38
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 348,
+    "name": "EncodedIssuerLen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Must be set if EncodedIssuer field is specified and must immediately\nprecede it.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 349,
+    "name": "EncodedIssuer",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "Encoded (non-ASCII characters) representation of the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 107,
+    "name": "SecurityDesc",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Security description.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 350,
+    "name": "EncodedSecurityDescL\nen",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 351,
+    "name": "EncodedSecurityDesc",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "Encoded (non-ASCII characters) representation of the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 4,
+    "name": "AdvSide",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": null,
+    "description": "Broker's side of advertised trade",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 53,
+    "name": "Shares",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Number of shares",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 44,
+    "name": "Price",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Price per share",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 15,
+    "name": "Currency",
+    "msg_type": null,
+    "data_type": "CURRENCY",
+    "required": false,
+    "description": "Identifies currency used for price. Absence of this field",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 75,
+    "name": "TradeDate",
+    "msg_type": null,
+    "data_type": "LOCALMK",
+    "required": false,
+    "description": "Indicates date of trade referenced in this message in",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 60,
+    "name": "TransactTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Time of execution/order creation (expressed in UTC",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 149,
+    "name": "URLLink",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "A URL (Uniform Resource Locator) link to additional",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 30,
+    "name": "LastMkt",
+    "msg_type": null,
+    "data_type": "EXCHANG",
+    "required": false,
+    "description": "Market of execution for last fill",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 336,
+    "name": "TradingSessionID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Identifier for Trading Session",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 39
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 23,
+    "name": "IOIid",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier of IOI message.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 40
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 28,
+    "name": "IOITransType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Identifies IOI message transaction type",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 40
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 26,
+    "name": "IOIRefID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Reference identifier used with CANCEL and",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 40
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 106,
+    "name": "Issuer",
+    "msg_type": null,
+    "data_type": "HITACHI",
+    "required": false,
+    "description": "350348 EncodedIssuerLen 10",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 40
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 350,
+    "name": "EncodedSecurityDescLen",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "Must be set if EncodedSecurityDesc field is\nspecified and must immediately precede it.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 41
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 54,
+    "name": "Side",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Side of order",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 41
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 27,
+    "name": "IOIShares",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Number of shares in numeric or relative size.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 41
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 62,
+    "name": "ValidUntilTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Indicates expiration time of indication message (always",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 41
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 25,
+    "name": "IOIQltyInd",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Relative quality of indication",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 41
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 130,
+    "name": "IOINaturalFlag",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates that IOI is the result of an existing agency",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 41
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 199,
+    "name": "NoIOIQualifiers",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Required if any IOIQualifiers are specified. Indicates the\nnumber of repeating IOIQualifiers.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 41
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 215,
+    "name": "NoRoutingIDs",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Required if any RoutingType and RoutingIDs are spec\nIndicates the number within repeating group.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 41
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 218,
+    "name": "SpreadToBenchmark",
+    "msg_type": null,
+    "data_type": "PRICEOFFS",
+    "required": false,
+    "description": "For Fixed Income. Basis points relative to a benchmark.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 41
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 219,
+    "name": "Benchmark",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "For Fixed Income. Identifies the benchmark (e.g. used",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 41
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 42,
+    "name": "OrigTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Time of message origination (always expressed in UTC",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 43
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 61,
+    "name": "Urgency",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Urgency flag",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 43
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 148,
+    "name": "Headline",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "The headline of a News message",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 43
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 358,
+    "name": "EncodedHeadlineLen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Must be set if EncodedHeadline field is specified and must\nimmediately precede it.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 43
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 359,
+    "name": "EncodedHeadline",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "Encoded (non-ASCII characters) representation of the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 43
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 146,
+    "name": "NoRelatedSym",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Number of legs that make up the Security",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 43
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 164,
+    "name": "EmailThreadID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier for an email thread (new and chain of",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 45
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 94,
+    "name": "EmailType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Email message type.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 45
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 147,
+    "name": "Subject",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "The subject of an Email message",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 45
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 356,
+    "name": "EncodedSubjectLen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Must be set if EncodedSubject field is specified and must\nimmediately precede it.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 45
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 357,
+    "name": "EncodedSubject",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "Encoded (non-ASCII characters) representation of the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 45
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 131,
+    "name": "QuoteReqID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier for quote request",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 47
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 117,
+    "name": "QuoteID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "118 NetMoney Amt Total amount due as the result of the transaction (e.g.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 50
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 301,
+    "name": "QuoteResponseLevel",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Level of Response requested from receiver of quote\nmessages. Is echoed back to the counterparty.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 50
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 132,
+    "name": "BidPx",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Bid price/rate",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 51
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 133,
+    "name": "OfferPx",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Offer price/rate",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 51
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 134,
+    "name": "BidSize",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Quantity of bid",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 51
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 135,
+    "name": "OfferSize",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Quantity of offer",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 51
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 188,
+    "name": "BidSpotRate",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Bid F/X spot rate.y vary and not limited to four)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 51
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 190,
+    "name": "OfferSpotRate",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Offer F/X spot rate.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 51
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 191,
+    "name": "OfferForwardPoints",
+    "msg_type": null,
+    "data_type": "PRICEOFFS",
+    "required": false,
+    "description": "Offer F/X forward points added to spot rate. May be a",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 52
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 64,
+    "name": "FutSettDate",
+    "msg_type": null,
+    "data_type": "LOCALMK",
+    "required": false,
+    "description": "Specific date of trade settlement (SettlementDate) in",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 52
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 40,
+    "name": "OrdType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Order type.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 52
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 193,
+    "name": "FutSettDate2",
+    "msg_type": null,
+    "data_type": "LOCALMK",
+    "required": false,
+    "description": "FutSettDate of the future part of a F/X swap order.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 52
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 192,
+    "name": "OrderQty2",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "OrderQty of the future part of a F/X swap order.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 52
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 293,
+    "name": "DefBidSize",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Default Bid Size.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 54
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 294,
+    "name": "DefOfferSize",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Default Offer Size.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 54
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 296,
+    "name": "NoQuoteSets",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "The number of sets of quotes in the message",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 54
+    }
+  },
+  {
+    "kind": "message",
+    "tag": null,
+    "name": "lowercase",
+    "msg_type": "j",
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 54
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 298,
+    "name": "QuoteCancelType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Identifies the type of Quote Cancel request.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 60
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 350,
+    "name": "EncodedSecurityDesc\nLen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 63
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 297,
+    "name": "QuoteAckStatus",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Status of the quote acknowledgement.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 64
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 300,
+    "name": "QuoteRejectReason",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Reason Quote was rejected.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 64
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 262,
+    "name": "MDReqID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": true,
+    "description": "Unique identifier for Market Data Request",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 68
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 263,
+    "name": "SubscriptionRequestType",
+    "msg_type": null,
+    "data_type": "Y",
+    "required": false,
+    "description": "SubcriptionRequestType indicates to the other party\nwhat type of response is expected. A snapshot\nrequest only asks for current information. A\nsubscribe request asks for updates as the status\nchanges. Unsubscribe will cancel any future update\nmessages from the counter party.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 68
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 264,
+    "name": "MarketDepth",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 68
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 265,
+    "name": "MDUpdateType",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "Required if SubscriptionRequestType = Snapshot +\nUpdates (1).",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 68
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 266,
+    "name": "AggregatedBook",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": null,
+    "description": "Specifies whether or not book entries should be",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 68
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 267,
+    "name": "NoMDEntryTypes",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "Number of MDEntryType fields requested.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 68
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 291,
+    "name": "FinancialStatus",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Identifies a firm\u2019s financial status.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 71
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 292,
+    "name": "CorporateAction",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Identifies the type of Corporate Action.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 71
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 387,
+    "name": "TotalVolumeTraded",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Total volume (quantity) traded.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 71
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 268,
+    "name": "NoMDEntries",
+    "msg_type": null,
+    "data_type": null,
+    "required": true,
+    "description": "Number of entries following.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 75
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 281,
+    "name": "MDReqRejReason",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Reason for the rejection of a Market Data request.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 79
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 320,
+    "name": "SecurityReqID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique ID of a Security Definition Request.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 80
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 321,
+    "name": "SecurityRequestType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 80
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 322,
+    "name": "SecurityResponseID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique ID of a Security Definition message.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 84
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 323,
+    "name": "SecurityResponseType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 84
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 393,
+    "name": "TotalNumSecurities",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 84
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 324,
+    "name": "SecurityStatusReqID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique ID of a Security Status Request message.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 88
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 325,
+    "name": "UnsolicitedIndicator",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates whether or not message is being sent as a",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 326,
+    "name": "SecurityTradingStatus",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 292,
+    "name": "CorporationCorporateAction",
+    "msg_type": null,
+    "data_type": "N",
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 327,
+    "name": "HaltReason",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Denotes the reason for the Opening Delay or Trading",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 328,
+    "name": "InViewOfCommon",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates whether or not the halt was due to Common",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 329,
+    "name": "DueToRelated",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates whether or not the halt was due to the Related",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 330,
+    "name": "BuyVolume",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Number of shares bought.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 331,
+    "name": "SellVolume",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Number of shares sold.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 332,
+    "name": "HighPx",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Represents an indication of the high end of the price",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 333,
+    "name": "LowPx",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Represents an indication of the low end of the price",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 31,
+    "name": "LastPx",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Price of this (last) fill. Field not required for",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 334,
+    "name": "Adjustment",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 91
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 335,
+    "name": "TradSesReqID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique ID of a Trading Session Status message.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 92
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 338,
+    "name": "TradSesMethod",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Method of trading:",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 92
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 339,
+    "name": "TradSesMode",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Trading Session Mode",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 92
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 263,
+    "name": "SubscriptionRequestTy\npe",
+    "msg_type": null,
+    "data_type": null,
+    "required": true,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 92
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 340,
+    "name": "TradSesStatus",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "State of the trading session",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 93
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 341,
+    "name": "TradSesStartTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Starting time of the trading session",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 93
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 342,
+    "name": "TradSesOpenTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Time of the opening of the trading session",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 93
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 343,
+    "name": "TradSesPreCloseTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Time of the pre-closed of the trading session",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 93
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 344,
+    "name": "TradSesCloseTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Closing time of the trading session",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 93
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 345,
+    "name": "TradSesEndTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "End time of the trading session",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 93
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 11,
+    "name": "ClOrdID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier for Order as assigned by institution",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 95
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 109,
+    "name": "ClientID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Firm identifier used in third party-transactions (should",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 95
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 76,
+    "name": "ExecBroker",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Identifies executing / give-up broker. Standard NASD",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 95
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 1,
+    "name": "Account",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Account mnemonic as agreed between broker and",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 95
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 78,
+    "name": "NoAllocs",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Indicates number of allocation groups to follow.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 95
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 63,
+    "name": "SettlmntTyp",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Indicates order settlement period. Absence of this field",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 95
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 21,
+    "name": "HandlInst",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Instructions for order handling on Broker trading floor",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 95
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 18,
+    "name": "ExecInst",
+    "msg_type": null,
+    "data_type": "MULTIPLE",
+    "required": false,
+    "description": "Instructions for order handling on exchange trading",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 95
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 110,
+    "name": "MinQty",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Minimum quantity of an order to be executed.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 95
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 111,
+    "name": "MaxFloor",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Maximum number of shares within an order to be shown",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 95
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 100,
+    "name": "ExDestination",
+    "msg_type": null,
+    "data_type": "EXCHANG",
+    "required": false,
+    "description": "Execution destination as defined by institution when",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 95
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 114,
+    "name": "LocateReqd",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates whether the broker is to locate the stock in",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 38,
+    "name": "OrderQty",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Number of shares ordered. This represents the number",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 152,
+    "name": "CashOrderQty",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Specifies the approximate order quantity desired in total",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 99,
+    "name": "StopPx",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Price per share",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 376,
+    "name": "ComplianceID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "ID used to represent this transaction for compliance",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 377,
+    "name": "SolicitedFlag",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates whether or not the order was solicited.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 59,
+    "name": "TimeInForce",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Specifies how long the order remains in effect. Absence",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 168,
+    "name": "EffectiveTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Time the details within the message should take effect",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 432,
+    "name": "ExpireDate",
+    "msg_type": null,
+    "data_type": "LOCALMK",
+    "required": false,
+    "description": "Date of order expiration (last day the order can trade),",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 126,
+    "name": "ExpireTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Time/Date of order expiration (always expressed in",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 427,
+    "name": "GTBookingInst",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 12,
+    "name": "Commission",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Commission. Note if CommType is percentage,",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 13,
+    "name": "CommType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Commission type",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 47,
+    "name": "Rule80A\n(aka OrderCapacity)",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 97
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 120,
+    "name": "SettlCurrency",
+    "msg_type": null,
+    "data_type": "CURRENCY",
+    "required": false,
+    "description": "Currency code of settlement denomination.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 98
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 77,
+    "name": "OpenClose",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "For options only.Indicates whether the resulting position",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 98
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 203,
+    "name": "CoveredOrUncovered",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 98
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 204,
+    "name": "CustomerOrFirm",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 98
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 210,
+    "name": "MaxShow",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Maximum number of shares within an order to be shown",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 98
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 211,
+    "name": "PegDifference",
+    "msg_type": null,
+    "data_type": "PRICEOFFS",
+    "required": false,
+    "description": "Amount (signed) added to the price of the peg for a",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 98
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 388,
+    "name": "DiscretionInst",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Code to identify the price a DiscretionOffset is related",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 98
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 389,
+    "name": "DiscretionOffset",
+    "msg_type": null,
+    "data_type": "PRICEOFFS",
+    "required": false,
+    "description": "Amount (signed) added to the \u201crelated to\u201d price",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 98
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 439,
+    "name": "ClearingFirm",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Firm that will clear the trade. Used if different from the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 98
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 440,
+    "name": "ClearingAccount",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Supplemental accounting information forwared to",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 98
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 12,
+    "name": "Pending",
+    "msg_type": null,
+    "data_type": "CANCEL",
+    "required": null,
+    "description": "Order with an Order Cancel Request pending, used to",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 99
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 11,
+    "name": "Pending",
+    "msg_type": null,
+    "data_type": "REPLACE",
+    "required": null,
+    "description": "Order with an Order Cancel/Replace Request pending,",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 99
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 9,
+    "name": "Calculated",
+    "msg_type": null,
+    "data_type": "ORDER",
+    "required": null,
+    "description": "has been completed for the day (either filled or",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 99
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 8,
+    "name": "Filled",
+    "msg_type": null,
+    "data_type": "ORDER",
+    "required": null,
+    "description": "completely filled, no remaining quantity",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 99
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 7,
+    "name": "Stopped",
+    "msg_type": null,
+    "data_type": "ORDER",
+    "required": null,
+    "description": "has been stopped at the exchange. Used when",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 99
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 6,
+    "name": "Suspended",
+    "msg_type": null,
+    "data_type": "ORDER",
+    "required": null,
+    "description": "has been placed in suspended state at the request",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 99
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 5,
+    "name": "Canceled",
+    "msg_type": null,
+    "data_type": "CANCELED",
+    "required": null,
+    "description": "order with or without executions",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 99
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 5,
+    "name": "Expired",
+    "msg_type": null,
+    "data_type": "ORDER",
+    "required": null,
+    "description": "has been canceled in broker\u2019s system due to time",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 99
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 4,
+    "name": "Partially",
+    "msg_type": null,
+    "data_type": "FILLED",
+    "required": null,
+    "description": "Outstanding order with executions and remaining",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 99
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 3,
+    "name": "Replaced",
+    "msg_type": null,
+    "data_type": "REPLACED",
+    "required": null,
+    "description": "order with or without executions",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 99
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 2,
+    "name": "New",
+    "msg_type": null,
+    "data_type": "OUTSTANDING",
+    "required": null,
+    "description": "order with no executions",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 100
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 2,
+    "name": "Rejected",
+    "msg_type": null,
+    "data_type": "ORDER",
+    "required": null,
+    "description": "has been rejected by broker. NOTE: An order",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 100
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 2,
+    "name": "Pending",
+    "msg_type": null,
+    "data_type": "NEW",
+    "required": null,
+    "description": "Order has been received by brokers system but not yet",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 100
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 37,
+    "name": "OrderID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier for Order as assigned by broker.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 102
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 41,
+    "name": "OrigClOrdID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "ClOrdID of the previous order (NOT the initial order of",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 103
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 382,
+    "name": "NoContraBrokers",
+    "msg_type": null,
+    "data_type": "MARCH",
+    "required": false,
+    "description": "1, 2000May 1, 2001 197 FIX 4.2 with Errata 20010501",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 103
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 66,
+    "name": "ListID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier for list as assigned by institution, used",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 103
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 17,
+    "name": "ExecID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier of execution message as assigned by",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 103
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 20,
+    "name": "ExecTransType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": true,
+    "description": "Identifies transaction type",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 103
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 19,
+    "name": "ExecRefID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Reference identifier used with Cancel and Correct",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 103
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 150,
+    "name": "ExecType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Describes the specific ExecutionRpt (i.e. Pending",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 103
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 39,
+    "name": "OrdStatus",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Identifies current status of order.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 103
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 103,
+    "name": "OrdRejReason",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "For optional use with ExecType = 8 (Rejected)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 103
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 378,
+    "name": "ExecRestatementReason",
+    "msg_type": null,
+    "data_type": null,
+    "required": false,
+    "description": "Required for ExecType = D (Restated).",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 103
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 32,
+    "name": "LastShares",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Quantity of shares bought/sold on this (last) fill. Field",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 105
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 194,
+    "name": "LastSpotRate",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "F/X spot rate.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 105
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 195,
+    "name": "LastForwardPoints",
+    "msg_type": null,
+    "data_type": "PRICEOFFS",
+    "required": false,
+    "description": "F/X forward points added to LastSpotRate. May be a",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 105
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 29,
+    "name": "LastCapacity",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Broker capacity in order execution",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 105
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 14,
+    "name": "CumQty",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Total number of shares filled.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 106
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 6,
+    "name": "AvgPx",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "7 BeginSeqNo int Message sequence number of first message in range to",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 106
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 424,
+    "name": "DayOrderQty",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "For GT orders, the OrderQty less all shares (adjusted",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 106
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 425,
+    "name": "DayCumQty",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "The number of shares on a GT order that have traded",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 106
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 426,
+    "name": "DayAvgPx",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "The average price of shares on a GT order that have",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 106
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 113,
+    "name": "ReportToExch",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Identifies party of trade responsible for exchange",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 106
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 381,
+    "name": "GrossTradeAmt",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Total amount traded (e.g. CumQty * AvgPx) expressed",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 106
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 119,
+    "name": "SettlCurrAmt",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Total amount due expressed in settlement currency",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 106
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 155,
+    "name": "SettlCurrFxRate",
+    "msg_type": null,
+    "data_type": "FLOAT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 106
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 156,
+    "name": "SettlCurrFxRateCalc",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Specifies whether or not SettlCurrFxRate should be",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 106
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 442,
+    "name": "MultiLegReportingType",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 107
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 127,
+    "name": "DKReason",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Reason for execution rejection.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 108
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 386,
+    "name": "NoTradingSessions",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Specifies the number of repeating TradingSessionIDs",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 111
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 121,
+    "name": "ForexReq",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates request for forex accommodation trade to",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 113
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 198,
+    "name": "SecondaryOrderID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned by the party which accepts the order. Can be",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 117
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 434,
+    "name": "CxlRejResponseTo",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Identifies the type of request that a Cancel Reject is in",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 117
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 102,
+    "name": "CxlRejReason",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 117
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 70,
+    "name": "AllocID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier for allocation message.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 122
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 71,
+    "name": "AllocTransType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Identifies allocation transaction type",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 122
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 72,
+    "name": "RefAllocID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Reference identifier to be used with Replace and,",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 122
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 196,
+    "name": "AllocLinkID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Can be used to link two different Allocation messages",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 122
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 197,
+    "name": "AllocLinkType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Can be used to link two different Allocation messages and identifies\nthe type of link. Required if AllocLinkID is specified.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 122
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 73,
+    "name": "NoOrders",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Indicates number of orders to be combined for allocation. If\norder(s) were manually delivered set to 1 (one).",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 122
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 124,
+    "name": "NoExecs",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Indicates number of individual execution repeating group entries to\nfollow. Absence of this field indicates that no individual execution\nentries are included. Primarily used to support step-outs.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 122
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 74,
+    "name": "AvgPrxPrecision",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 123
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 118,
+    "name": "NetMoney",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Expressed in same currency as AvgPx. Sum of AllocNetMoney.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 124
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 157,
+    "name": "NumDaysInterest",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Applicable for Convertible Bonds and fixed income",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 124
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 158,
+    "name": "AccruedInterestRate",
+    "msg_type": null,
+    "data_type": "FLOAT",
+    "required": false,
+    "description": "Applicable for Convertible Bonds and fixed income",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 124
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 87,
+    "name": "AllocStatus",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 126
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 88,
+    "name": "AllocRejCode",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Required for AllocStatus = 1 (rejected)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 126
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 162,
+    "name": "SettlInstID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier for Settlement Instructions message.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 127
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 163,
+    "name": "SettlInstTransType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Settlement Instructions message transaction type",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 127
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 214,
+    "name": "SettlInstRefID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Reference identifier for the SettlInstID with Cancel and",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 127
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 160,
+    "name": "SettlInstMode",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Indicates mode used for Settlement Instructions",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 127
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 165,
+    "name": "SettlInstSource",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Indicates source of Settlement Instructions",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 127
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 79,
+    "name": "AllocAccount",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Sub-account mnemonic",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 127
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 166,
+    "name": "SettlLocation",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Identifies Settlement Depository or Country Code",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 169,
+    "name": "StandInstDbType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 170,
+    "name": "StandInstDbName",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Name of the Standing Instruction database represented",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 171,
+    "name": "StandInstDbID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier used on the Standing Instructions",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 172,
+    "name": "SettlDeliveryType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 173,
+    "name": "SettlDepositoryCode",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Broker\u2019s account code at the depository (i.e. CEDEL ID",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 174,
+    "name": "SettlBrkrCode",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "BIC (Bank Identification Code\u2014Swift managed) code",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 175,
+    "name": "SettlInstCode",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "BIC (Bank Identification Code\u2014Swift managed) code",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 176,
+    "name": "SecuritySettlAgentNam\ne",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 177,
+    "name": "SecuritySettlAgentCode",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 178,
+    "name": "SecuritySettlAgentAcct\nNum",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 179,
+    "name": "SecuritySettlAgentAcct\nName",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 180,
+    "name": "SecuritySettlAgentCont\nactName",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 181,
+    "name": "SecuritySettlAgentCont\nactPhone",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 182,
+    "name": "CashSettlAgentName",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Name of SettlInstSource's local agent bank if",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 128
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 183,
+    "name": "CashSettlAgentCode",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "BIC (Bank Identification Code--Swift managed) code of",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 129
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 184,
+    "name": "CashSettlAgentAcctNu\nm",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 129
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 185,
+    "name": "CashSettlAgentAcctNa\nme",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 129
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 186,
+    "name": "CashSettlAgentContact\nName",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 129
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 187,
+    "name": "CashSettlAgentContact\nPhone",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 129
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 390,
+    "name": "BidID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier for Bid Response as assigned by",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 130
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 391,
+    "name": "ClientBidID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique identifier for a Bid Request as assigned by",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 130
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 374,
+    "name": "BidRequestTransType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Identifies the Bid Request message type.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 130
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 392,
+    "name": "ListName",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Descriptive name for list order.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 130
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 394,
+    "name": "BidType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "e.g. Non Disclosed Model, Disclosed Model, No Bidding\nProcess",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 130
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 395,
+    "name": "NumTickets",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Total number of tickets/allocations assuming fully executed",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 130
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 397,
+    "name": "SideValue2",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Amounts in currency",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 131
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 398,
+    "name": "NoBidDescriptors",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Used if BidType=\u201dNon Disclosed\u201d",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 131
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 420,
+    "name": "NoBidComponents",
+    "msg_type": null,
+    "data_type": null,
+    "required": true,
+    "description": "Number of bid repeating groups",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 131
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 409,
+    "name": "LiquidityIndType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 131
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 410,
+    "name": "WtAverageLiquidity",
+    "msg_type": null,
+    "data_type": "FLOAT",
+    "required": false,
+    "description": "Overall weighted average liquidity expressed as a % of\naverage daily volume",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 131
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 411,
+    "name": "ExchangeForPhysical",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates whether or not to exchange for phsyical.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 131
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 412,
+    "name": "OutSideMainCountryIndex\nOutMainCntryUIndex",
+    "msg_type": null,
+    "data_type": null,
+    "required": false,
+    "description": "% value of stocks outside main country in Currency",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 131
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 413,
+    "name": "CrossPercent",
+    "msg_type": null,
+    "data_type": null,
+    "required": false,
+    "description": "% of program that crosses in Currency",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 131
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 415,
+    "name": "ProgPeriodInterval",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 132
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 416,
+    "name": "IncTaxInd",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 132
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 417,
+    "name": "NumBidders",
+    "msg_type": null,
+    "data_type": "N",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 132
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 418,
+    "name": "TradeType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": null,
+    "description": "Code to represent the type of trade.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 132
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 419,
+    "name": "BasisPxType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": null,
+    "description": "Code to represent the basis price type.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 132
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 414,
+    "name": "ProgressRptReqs",
+    "msg_type": null,
+    "data_type": null,
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 135
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 433,
+    "name": "ListExecInstType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Identifies the type of ListExecInst.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 135
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 69,
+    "name": "ListExecInst",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Free format text message containing list handling and",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 135
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 352,
+    "name": "EncodedListExecInstLen",
+    "msg_type": null,
+    "data_type": "MARCH",
+    "required": false,
+    "description": "1, 2000May 1, 2001 196 FIX 4.2 with Errata 20010501",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 135
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 353,
+    "name": "EncodedListExecInst",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "Encoded (non-ASCII characters) representation of the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 135
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 422,
+    "name": "TotNoStrikes",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Used to support fragmentation. Sum of NoStrikes across all\nmessages with the same ListID.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 140
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 428,
+    "name": "NoStrikes",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Number of strike price entries",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 140
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 429,
+    "name": "ListStatusType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 142
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 82,
+    "name": "NoRpts",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Total number of messages required to status complete list.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 142
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 431,
+    "name": "ListOrderStatus",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 142
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 83,
+    "name": "RptSeq",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Sequence number of this report message.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 142
+    }
+  },
+  {
+    "kind": "message",
+    "tag": null,
+    "name": "Session-level problem meeting the criteria of Use the session-level Reject message",
+    "msg_type": "3",
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 148
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 379,
+    "name": "BusinessRejectRefID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "The value of the business-level \u201cID\u201d field on the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 150
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 380,
+    "name": "BusinessRejectReason",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "Code to identify reason for a Business Message Reject message.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 150
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 24,
+    "name": "IOIOthSvc",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "No longer used as of FIX 4.2. Included here for",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 154
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 33,
+    "name": "LinesOfText",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 155
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 46,
+    "name": "RelatdSym",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Symbol of issue related to story. Can be repeated within",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 158
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 51,
+    "name": "SendingDate",
+    "msg_type": null,
+    "data_type": "LOCALMK",
+    "required": false,
+    "description": "No longer used. Included here for reference to prior",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 159
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 47,
+    "name": "Rule80A",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": null,
+    "description": "Note that the name of this field is changing to",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 159
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 67,
+    "name": "ListSeqNo",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 161
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 68,
+    "name": "TotNoOrders\n(formerly named:\nListNoOrds)",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 161
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 80,
+    "name": "AllocShares",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Number of shares to be allocated to specific sub-account",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 162
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 81,
+    "name": "ProcessCode",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Processing code for sub-account. Absence of this field",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 163
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 84,
+    "name": "CxlQty",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Total number of shares canceled for this order.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 163
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 85,
+    "name": "NoDlvyInst",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 163
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 86,
+    "name": "DlvyInst",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Free format text field to indicate delivery instructions",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 163
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 92,
+    "name": "BrokerOfCredit",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Broker to receive trade credit.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 163
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 101,
+    "name": "(Not Defined)",
+    "msg_type": null,
+    "data_type": "N/A",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 164
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 104,
+    "name": "IOIQualifier",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Code to qualify IOI use.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 165
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 105,
+    "name": "WaveNo",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Identifier to aid in the management of multiple lists",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 165
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 123,
+    "name": "GapFillFlag",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates that the Sequence Reset message is replacing",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 167
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 125,
+    "name": "CxlType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "No longer used. Included here for reference to prior",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 167
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 136,
+    "name": "NoMiscFees",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 168
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 137,
+    "name": "MiscFeeAmt",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Miscellaneous fee value",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 168
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 138,
+    "name": "MiscFeeCurr",
+    "msg_type": null,
+    "data_type": "CURRENCY",
+    "required": false,
+    "description": "Currency of miscellaneous fee",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 168
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 139,
+    "name": "MiscFeeType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Indicates type of miscellaneous fee.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 168
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 140,
+    "name": "PrevClosePx",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Previous closing price of security.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 168
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 144,
+    "name": "OnBehalfOfLocationI\nD",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 168
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 144,
+    "name": "OnBehalfOfLocationI",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "Assigned value used to identify specific message",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 168
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 151,
+    "name": "LeavesQty",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Amount of shares open for further execution. If the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 169
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 153,
+    "name": "AllocAvgPx",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "AvgPx for a specific AllocAccount",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 169
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 154,
+    "name": "AllocNetMoney",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "NetMoney for a specific AllocAccount",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 169
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 159,
+    "name": "AccruedInterestAmt",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Amount of Accrued Interest for convertible bonds and",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 170
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 161,
+    "name": "AllocText",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Free format text related to a specific AllocAccount.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 170
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 176,
+    "name": "SecuritySettlAgentNa\nme",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 177,
+    "name": "SecuritySettlAgentCod\ne",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 178,
+    "name": "SecuritySettlAgentAcc\ntNum",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 179,
+    "name": "SecuritySettlAgentAcc\ntName",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 180,
+    "name": "SecuritySettlAgentCon\ntactName",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 181,
+    "name": "SecuritySettlAgentCon\ntactPhone",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 184,
+    "name": "CashSettlAgentAcctN\num",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 186,
+    "name": "CashSettlAgentContac\ntName",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 176,
+    "name": "SecuritySettlAgentNa",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "Name of SettlInstSource's local agent bank if",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 177,
+    "name": "SecuritySettlAgentCod",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "BIC (Bank Identification Code--Swift managed) code of",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 178,
+    "name": "SecuritySettlAgentAcc",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "SettlInstSource's account number at local agent bank if",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 179,
+    "name": "SecuritySettlAgentAcc",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "Name of SettlInstSource's account at local agent bank if",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 180,
+    "name": "SecuritySettlAgentCon",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "Name of contact at local agent bank for SettlInstSource's",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 181,
+    "name": "SecuritySettlAgentCon",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "Phone number for contact at local agent bank if",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 184,
+    "name": "CashSettlAgentAcctN",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "SettlInstSource's account number at local agent bank if",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 185,
+    "name": "CashSettlAgentAcctNa",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "Name of SettlInstSource's account at local agent bank if",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 186,
+    "name": "CashSettlAgentContac",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "Name of contact at local agent bank for SettlInstSource's",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 172
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 187,
+    "name": "CashSettlAgentContac\ntPhone",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 173
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 189,
+    "name": "BidForwardPoints",
+    "msg_type": null,
+    "data_type": "PRICEOFFS",
+    "required": false,
+    "description": "Bid F/X forward points added to spot rate. May be a",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 173
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 187,
+    "name": "CashSettlAgentContac",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "Phone number for contact at local agent bank for",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 173
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 208,
+    "name": "NotifyBrokerOfCredit",
+    "msg_type": null,
+    "data_type": "BOOLEAN",
+    "required": false,
+    "description": "Indicates whether or not details should be",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 174
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 209,
+    "name": "AllocHandlInst",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 174
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 216,
+    "name": "RoutingType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 175
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 217,
+    "name": "RoutingID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Assigned value used to identify a specific routing",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 175
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 222,
+    "name": "the Fixed Income",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 175
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 263,
+    "name": "SubscriptionRequestT",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": null,
+    "description": "Subscription Request Type",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 176
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 269,
+    "name": "MDEntryType",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Type Market Data entry.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 177
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 270,
+    "name": "MDEntryPx",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Price of the Market Data Entry.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 177
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 271,
+    "name": "MDEntrySize",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Number of shares represented by the Market Data Entry.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 177
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 272,
+    "name": "MDEntryDate",
+    "msg_type": null,
+    "data_type": "UTCDATE",
+    "required": false,
+    "description": "Date of Market Data Entry.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 177
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 273,
+    "name": "MDEntryTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Time of Market Data Entry.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 177
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 274,
+    "name": "TickDirection",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Direction of the \"tick\".",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 177
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 275,
+    "name": "MDMkt",
+    "msg_type": null,
+    "data_type": "EXCHANG",
+    "required": false,
+    "description": "Market posting quote / trade.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 177
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 276,
+    "name": "QuoteCondition",
+    "msg_type": null,
+    "data_type": "MULTIPLE",
+    "required": false,
+    "description": "Space-delimited list of conditions describing a quote.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 177
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 277,
+    "name": "TradeCondition",
+    "msg_type": null,
+    "data_type": "MULTIPLE",
+    "required": false,
+    "description": "Space-delimited list of conditions describing a trade",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 178
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 278,
+    "name": "MDEntryID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique Market Data Entry identifier.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 178
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 279,
+    "name": "MDUpdateAction",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Type of Market Data update action.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 178
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 280,
+    "name": "MDEntryRefID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Refers to a previous MDEntryID.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 178
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 282,
+    "name": "MDEntryOriginator",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Originator of a Market Data Entry",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 178
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 283,
+    "name": "LocationID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Identification of a Market Maker\u2019s location",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 178
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 284,
+    "name": "DeskID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Identification of a Market Maker\u2019s desk",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 178
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 285,
+    "name": "DeleteReason",
+    "msg_type": null,
+    "data_type": "LEN",
+    "required": false,
+    "description": "324 SecurityStatusReqID",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 178
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 286,
+    "name": "OpenCloseSettleFlag",
+    "msg_type": null,
+    "data_type": "MARCH",
+    "required": false,
+    "description": "1, 2000May 1, 2001 194 FIX 4.2 with Errata 20010501",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 179
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 287,
+    "name": "SellerDays",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 179
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 288,
+    "name": "MDEntryBuyer",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Buying party in a trade",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 179
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 289,
+    "name": "MDEntrySeller",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Selling party in a trade",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 179
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 290,
+    "name": "MDEntryPositionNo",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 179
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 295,
+    "name": "NoQuoteEntries",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 179
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 299,
+    "name": "QuoteEntryID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Uniquely identifies the quote as part of a QuoteSet.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 179
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 302,
+    "name": "QuoteSetID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Unique id for the Quote Set.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 303,
+    "name": "QuoteRequestType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 304,
+    "name": "TotQuoteEntries",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 305,
+    "name": "UnderlyingIDSource",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Underlying security\u2019s IDSource.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 306,
+    "name": "UnderlyingIssuer",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Underlying security\u2019s Issuer.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 307,
+    "name": "UnderlyingSecurityDe\nsc",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 308,
+    "name": "UnderlyingSecurityEx\nchange",
+    "msg_type": null,
+    "data_type": "EXCHANG\nE",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 309,
+    "name": "UnderlyingSecurityID",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Underlying security\u2019s SecurityID.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 310,
+    "name": "UnderlyingSecurityTy\npe",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 307,
+    "name": "UnderlyingSecurityDe",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "Underlying security\u2019s SecurityDesc.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 308,
+    "name": "UnderlyingSecurityEx",
+    "msg_type": null,
+    "data_type": "EXCHANG",
+    "required": null,
+    "description": "Underlying security\u2019s SecurityExchange. Can be used",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 310,
+    "name": "UnderlyingSecurityTy",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "Underlying security\u2019s SecurityType.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 180
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 311,
+    "name": "UnderlyingSymbol",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Underlying security\u2019s Symbol.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 181
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 312,
+    "name": "UnderlyingSymbolSfx",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Underlying security\u2019s SymbolSfx.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 181
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 313,
+    "name": "UnderlyingMaturityM\nonthYear",
+    "msg_type": null,
+    "data_type": "MONTH-\nYEAR",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 181
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 314,
+    "name": "UnderlyingMaturityDa\ny",
+    "msg_type": null,
+    "data_type": "DAY-OF-\nMONTH",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 181
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 315,
+    "name": "UnderlyingPutOrCall",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 181
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 316,
+    "name": "UnderlyingStrikePrice",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Underlying security\u2019s StrikePrice.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 181
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 317,
+    "name": "UnderlyingOptAttribut\ne",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 181
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 318,
+    "name": "Underlying Currency",
+    "msg_type": null,
+    "data_type": "CURRENCY",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 181
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 319,
+    "name": "RatioQty",
+    "msg_type": null,
+    "data_type": "FLOATQUA\nNTITY",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 181
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 317,
+    "name": "UnderlyingOptAttribut",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": null,
+    "description": "Underlying security\u2019s OptAttribute.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 181
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 318,
+    "name": "Underlying",
+    "msg_type": null,
+    "data_type": "CURRENCY",
+    "required": null,
+    "description": "March 1, 2000May 1, 2001 199 FIX 4.2 with Errata 20010501",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 181
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 337,
+    "name": "ContraTrader",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Identifies the trader (e.g. \"badge number\") of the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 183
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 346,
+    "name": "NumberOfOrders",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 184
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 352,
+    "name": "EncodedListExecInstL\nen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 184
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 360,
+    "name": "EncodedAllocTextLen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 185
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 361,
+    "name": "EncodedAllocText",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "Encoded (non-ASCII characters) representation of the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 185
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 362,
+    "name": "EncodedUnderlyingIss\nuerLen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 185
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 363,
+    "name": "EncodedUnderlyingIss\nuer",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 185
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 364,
+    "name": "EncodedUnderlyingSe\ncurityDescLen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 185
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 365,
+    "name": "EncodedUnderlyingSe\ncurityDesc",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 185
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 363,
+    "name": "EncodedUnderlyingIss",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": null,
+    "description": "Encoded (non-ASCII characters) representation of the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 185
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 365,
+    "name": "EncodedUnderlyingSe",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": null,
+    "description": "Encoded (non-ASCII characters) representation of the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 185
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 366,
+    "name": "AllocPrice",
+    "msg_type": null,
+    "data_type": "PRICE",
+    "required": false,
+    "description": "Executed price for an AllocAccount entry used when",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 186
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 367,
+    "name": "QuoteSetValidUntilTi\nme",
+    "msg_type": null,
+    "data_type": "UTCTIM\nESTAMP",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 186
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 368,
+    "name": "QuoteEntryRejectReas\non",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 186
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 369,
+    "name": "LastMsgSeqNumProce\nssed",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 186
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 367,
+    "name": "QuoteSetValidUntilTi",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": null,
+    "description": "Indicates expiration time of this particular QuoteSet",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 186
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 370,
+    "name": "OnBehalfOfSendingTi",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": null,
+    "description": "Used when a message is sent via a \u201chub\u201d or \u201cservice",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 186
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 375,
+    "name": "ContraBroker",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Identifies contra broker. Standard NASD market-maker",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 187
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 378,
+    "name": "ExecRestatementReas\non",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 187
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 385,
+    "name": "MsgDirection",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "Specifies the direction of the messsage.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 187
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 396,
+    "name": "SideValue1",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Amounts in currency",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 188
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 399,
+    "name": "BidDescriptorType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 188
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 400,
+    "name": "BidDescriptor",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "BidDescriptor value. Usage depends upon",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 189
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 401,
+    "name": "SideValueInd",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 189
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 402,
+    "name": "LiquidityPctLow",
+    "msg_type": null,
+    "data_type": "FLOAT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 189
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 403,
+    "name": "LiquidityPctHigh",
+    "msg_type": null,
+    "data_type": "FLOAT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 189
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 404,
+    "name": "LiquidityValue",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Value between LiquidityPctLow and LiquidityPctHigh",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 189
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 405,
+    "name": "EFPTrackingError",
+    "msg_type": null,
+    "data_type": "FLOAT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 189
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 406,
+    "name": "FairValue",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Used in EFP trades",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 189
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 407,
+    "name": "OutsideIndexPct",
+    "msg_type": null,
+    "data_type": "FLOAT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 189
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 408,
+    "name": "ValueOfFutures",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Used in EFP trades",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 189
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 412,
+    "name": "OutMainCntryUIndex",
+    "msg_type": null,
+    "data_type": "AMT",
+    "required": false,
+    "description": "Value of stocks in Currency",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 189
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 421,
+    "name": "Country",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": null,
+    "description": "ISO Country Code in field",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 190
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 423,
+    "name": "PriceType",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 191
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 430,
+    "name": "NetGrossInd",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 191
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 435,
+    "name": "UnderlyingCouponRat\ne",
+    "msg_type": null,
+    "data_type": "FLOAT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 192
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 436,
+    "name": "UnderlyingContractM\nultiplier",
+    "msg_type": null,
+    "data_type": "FLOAT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 192
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 437,
+    "name": "ContraTradeQty",
+    "msg_type": null,
+    "data_type": "QTY",
+    "required": false,
+    "description": "Quantity traded with the ContraBroker.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 192
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 438,
+    "name": "ContraTradeTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "Identifes the time of the trade with the ContraBroker.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 192
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 441,
+    "name": "LiquidityNumSecuritie\ns",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 192
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 442,
+    "name": "MultiLegReportingTy\npe",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 193
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 443,
+    "name": "StrikeTime",
+    "msg_type": null,
+    "data_type": "UTCTIM",
+    "required": false,
+    "description": "The time at which current market prices are used to",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 193
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 444,
+    "name": "ListStatusText",
+    "msg_type": null,
+    "data_type": "STRING",
+    "required": false,
+    "description": "Free format text string related to List Status.",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 193
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 445,
+    "name": "EncodedListStatusTex\ntLen",
+    "msg_type": null,
+    "data_type": "INT",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 193
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 446,
+    "name": "EncodedListStatusTex\nt",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": false,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 193
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 442,
+    "name": "MultiLegReportingTy",
+    "msg_type": null,
+    "data_type": "CHAR",
+    "required": null,
+    "description": "Used to indicate what an Execution Report represents",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 193
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 446,
+    "name": "EncodedListStatusTex",
+    "msg_type": null,
+    "data_type": "DATA",
+    "required": null,
+    "description": "Encoded (non-ASCII characters) representation of the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 193
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 24,
+    "name": "IOIOthSvc\n(no longer used)",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 194
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 51,
+    "name": "SendingDate\n(no longer used)",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 194
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 85,
+    "name": "NoDlvyInst\n(no longer used)",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 194
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 86,
+    "name": "DlvyInst\n(no longer used)",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 194
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 125,
+    "name": "CxlType\n(no longer used)",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 195
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 176,
+    "name": "SecuritySettlAgentName",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 195
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 178,
+    "name": "SecuritySettlAgentAcctNu\nm",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 195
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 179,
+    "name": "SecuritySettlAgentAcctNa\nme",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 195
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 180,
+    "name": "SecuritySettlAgentContac\ntName",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 195
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 181,
+    "name": "SecuritySettlAgentContac\ntPhone",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 195
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 184,
+    "name": "CashSettlAgentAcctNum",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 195
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 185,
+    "name": "CashSettlAgentAcctName",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 195
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 186,
+    "name": "CashSettlAgentContactN\name",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 195
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 187,
+    "name": "CashSettlAgentContactP\nhone",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 195
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 307,
+    "name": "UnderlyingSecurityDesc",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 196
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 308,
+    "name": "UnderlyingSecurityExcha\nnge",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 196
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 310,
+    "name": "UnderlyingSecurityType",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 196
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 313,
+    "name": "UnderlyingMaturityMonth\nYear",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 196
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 314,
+    "name": "UnderlyingMaturityDay",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 196
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 317,
+    "name": "UnderlyingOptAttribute",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 196
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 362,
+    "name": "EncodedUnderlyingIssuer\nLen",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 196
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 363,
+    "name": "EncodedUnderlyingIssuer",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 364,
+    "name": "EncodedUnderlyingSecuri\ntyDescLen",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 365,
+    "name": "EncodedUnderlyingSecuri\ntyDesc",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 367,
+    "name": "QuoteSetValidUntilTime",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 368,
+    "name": "QuoteEntryRejectReason",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 369,
+    "name": "LastMsgSeqNumProcess\ned",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 370,
+    "name": "OnBehalfOfSendingTime",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 414,
+    "name": "ProgRptReqs",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 435,
+    "name": "UnderlyingCouponRate",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 436,
+    "name": "UnderlyingContractMultipl\nier",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 441,
+    "name": "LiquidityNumSecurities",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 445,
+    "name": "ListStatusEncodedTextLe\nn",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 446,
+    "name": "ListStatusEncodedText",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 197
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 4,
+    "name": "Cancel",
+    "msg_type": null,
+    "data_type": "REJECT",
+    "required": null,
+    "description": "New 10000 If request is rejected by salesperson",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 211
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 4,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "REPLACE",
+    "required": null,
+    "description": "Filled New 8000 8000 0 0 The replace request is interpreted as requiring the",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 211
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 5,
+    "name": "Cancel",
+    "msg_type": null,
+    "data_type": "REJECT",
+    "required": null,
+    "description": "Partially 10000 Request is rejected",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 211
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 5,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "PENDING",
+    "required": null,
+    "description": "Pending New 10000 5000 5000 0 C",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 211
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 5,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION",
+    "required": false,
+    "description": "Pending",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 212
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 6,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION",
+    "required": false,
+    "description": "Canceled",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 212
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 7,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION(Y)",
+    "required": false,
+    "description": "Canceled",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 212
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 7,
+    "name": "Cancel",
+    "msg_type": null,
+    "data_type": "REJECT",
+    "required": null,
+    "description": "Pending 10000 Rejected because broker does not support processing of",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 212
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 7,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "REPLACE",
+    "required": null,
+    "description": "Partially New 8000 1000 7000 0 Broker processes Replace (Y,X) first",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 212
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 4,
+    "name": "Replace",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 215
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 6,
+    "name": "Cancel",
+    "msg_type": null,
+    "data_type": "REJECT",
+    "required": null,
+    "description": "Filled 10000 If request is rejected",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 215
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 6,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "CANCELED",
+    "required": null,
+    "description": "Canceled New 10000 5000 0 0 D",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 215
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 10,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "PENDING",
+    "required": null,
+    "description": "Pending New 10000 1000 0 120 0 0 I",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 218
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 11,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "REPLACE",
+    "required": null,
+    "description": "Partially New 12000 1000 2000 120 0 0 J",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 218
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 9,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "REPLACE",
+    "required": null,
+    "description": "Partially New 7000 1000 6000 0 Broker then processes Replace (Z,Y)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 219
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 8,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "REPLACE",
+    "required": null,
+    "description": "Partially New 8000 1000 7000 0 \u2018Partially filled\u2019 order status takes precedence over",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 221
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 8,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION(Y)",
+    "required": false,
+    "description": "Canceled",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 222
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 9,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION (Y)",
+    "required": false,
+    "description": "Partially",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 222
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 2,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "NEW",
+    "required": null,
+    "description": "New New 10000 0 0 0 Confirm that the broker has accepted the order \u2013 note that",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 222
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 3,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "PARTIAL",
+    "required": null,
+    "description": "Partially New 10000 2000 8000 2000 Execution of 2000",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 222
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 2,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION(X)",
+    "required": false,
+    "description": "New",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 223
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 3,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION(X)",
+    "required": false,
+    "description": "Partially",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 223
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 4,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION(X)",
+    "required": false,
+    "description": "New",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 223
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 4,
+    "name": "Status",
+    "msg_type": null,
+    "data_type": "REQUEST",
+    "required": null,
+    "description": "(Y)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 226
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 2,
+    "name": "Status",
+    "msg_type": null,
+    "data_type": "REQUEST",
+    "required": null,
+    "description": "(X)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 227
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 5,
+    "name": "Status",
+    "msg_type": null,
+    "data_type": "REQUEST",
+    "required": null,
+    "description": "(X)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 227
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 8,
+    "name": "Status",
+    "msg_type": null,
+    "data_type": "REQUEST",
+    "required": null,
+    "description": "(X)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 227
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 10,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION(X)",
+    "required": false,
+    "description": "Filled",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 11,
+    "name": "Status Request",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 12,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION(X)",
+    "required": false,
+    "description": "Filled",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 13,
+    "name": "Replace",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 14,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION",
+    "required": false,
+    "description": "Pending",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 15,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION",
+    "required": false,
+    "description": "Partially",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 16,
+    "name": "Status Request",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 17,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION",
+    "required": false,
+    "description": "Partially",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 18,
+    "name": "Status Request",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 19,
+    "name": "",
+    "msg_type": null,
+    "data_type": "EXECUTION(Y)",
+    "required": false,
+    "description": "Partially",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 11,
+    "name": "Status",
+    "msg_type": null,
+    "data_type": "REQUEST",
+    "required": null,
+    "description": "(X)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 14,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "PENDING",
+    "required": null,
+    "description": "Pending New 10000 1000 0 0",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 15,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "REPLACE",
+    "required": null,
+    "description": "Partially New 12000 1000 2000 0",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 16,
+    "name": "Status",
+    "msg_type": null,
+    "data_type": "REQUEST",
+    "required": null,
+    "description": "(X)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 17,
+    "name": "Execution",
+    "msg_type": null,
+    "data_type": "PARTIAL",
+    "required": null,
+    "description": "Partially Status 12000 1000 2000 Sent in response to status request. Note reference to X to",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 18,
+    "name": "Status",
+    "msg_type": null,
+    "data_type": "REQUEST",
+    "required": null,
+    "description": "(Y)",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 228
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 1,
+    "name": "New Order(X)",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 233
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 3,
+    "name": "New Order(X)",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 233
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 5,
+    "name": "New Order(Y)",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 233
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 350348,
+    "name": "EncodedIssuerLen",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 255
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 351349,
+    "name": "EncodedIssuer",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 255
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 356,
+    "name": "EncodedTextLen",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 255
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 357,
+    "name": "EncodedText",
+    "msg_type": null,
+    "data_type": null,
+    "required": null,
+    "description": "",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 255
+    }
+  },
+  {
+    "kind": "field",
+    "tag": 1,
+    "name": "Security",
+    "msg_type": null,
+    "data_type": "VALUE",
+    "required": null,
+    "description": "$8M @300%",
+    "values": {},
+    "children": [],
+    "source": "pdf:fix-42-with_errata_20010501.pdf",
+    "meta": {
+      "page": 276
+    }
+  }
+]

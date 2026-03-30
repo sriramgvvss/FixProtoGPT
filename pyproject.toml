@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "fixprotogpt"
+version = "1.0.0"
+description = "FIX Protocol Language Model — GPT-style decoder-only transformer for FIX 5.0 SP2"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Sriram VVSS Gosala", email = "46827515+sriramgvvss@users.noreply.github.com"}]
+
+dependencies = [
+    "torch>=2.0.0",
+    "numpy>=1.24.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.65.0",
+    "tensorboard>=2.12.0",
+    "requests>=2.31.0",
+    "safetensors>=0.3.0",
+
+    "flask>=2.3.0",
+    "flask-cors>=4.0.0",
+    "beautifulsoup4>=4.12.0",
+    "lxml>=4.9.0",
+    "rich>=13.0.0",
+    "rjsmin>=1.2.0",
+    "python-dotenv>=1.0.0",
+    # Ingestion framework — multi-format spec parsers
+    "pdfplumber>=0.10.0",
+    "python-docx>=1.0.0",
+    "openpyxl>=3.1.0",
+    # True BPE tokenizer (optional — graceful fallback if missing)
+    "tokenizers>=0.15.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "pytest-xdist>=3.3.0",
+    "black>=23.7.0",
+    "flake8>=6.1.0",
+    "isort>=5.12.0",
+    "mypy>=1.5.0",
+]
+prod = [
+    "gunicorn>=21.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--tb=short",
+    "--strict-markers",
+    "-x",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "requires_model: requires a trained model checkpoint",
+    "integration: integration tests",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true

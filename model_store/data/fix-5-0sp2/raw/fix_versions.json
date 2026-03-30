@@ -1,0 +1,16 @@
+{
+  "detected_versions": [
+    "FIX.5.0SP2"
+  ],
+  "primary_version": "FIX.5.0SP2",
+  "transport_version": "FIXT.1.1",
+  "updated_at": "2026-02-16T00:22:30.702598",
+  "version_features": {
+    "FIX.5.0SP2": {
+      "message_types": 79,
+      "fields": 115,
+      "enumerations": 159,
+      "components": 7
+    }
+  }
+}

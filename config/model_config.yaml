@@ -1,0 +1,113 @@
+# FixProtoGPT Model Configuration
+
+# ── Active FIX version (single source of truth) ────────────────────
+# All model_store paths are derived from this:
+#   checkpoints → model_store/checkpoints/fix-5-0sp2/
+#   data        → model_store/data/fix-5-0sp2/
+version:
+  active: "5.0SP2"           # FIX application version
+  protocol: "FIX.5.0SP2"     # Full protocol identifier
+  session: "FIXT.1.1"        # FIXT session-layer version
+
+model:
+  # Architecture
+  n_layers: 6               # Number of transformer layers
+  n_heads: 8                # Number of attention heads
+  d_model: 512              # Model dimension
+  d_ff: 2048               # Feed-forward dimension (4 * d_model)
+  vocab_size: 2048         # Vocabulary size (increased from 1024 for richer encoding)
+  max_seq_len: 512         # Maximum sequence length (sufficient for FIX messages)
+  dropout: 0.1             # Dropout rate
+  attention_dropout: 0.1   # Attention dropout
+  
+  # Positional encoding
+  use_rotary: true         # Use RoPE (Rotary Position Embedding)
+  
+training:
+  # Training settings
+  batch_size: 32             # effective batch size (via gradient accumulation)
+  micro_batch_size: 8        # per-step GPU/MPS batch size (was 2)
+  max_epochs: 100           # 0 or "auto" = dynamically calculated from data size
+  learning_rate: 1.5e-4     # lowered from 3e-4 to escape plateau
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  warmup_steps: 500          # shortened for resume
+  
+  # Learning rate schedule
+  lr_schedule: "cosine"
+  min_lr: 1.0e-5             # lowered from 3e-5 for deeper decay
+  
+  # Optimization
+  use_mixed_precision: true
+  compile_model: false      # PyTorch 2.0 compilation
+  
+  # Checkpointing
+  save_interval: 500
+  eval_interval: 100
+
+  # Early stopping (0 = disabled; >0 = stop after N evals with no val improvement)
+  early_stopping_patience: 0  # disabled — train all 100 epochs
+  
+  # Target val loss (0 = disabled; >0 = stop when val loss reaches this threshold)
+  target_val_loss: 0.0  # disabled
+  
+data:
+  # Paths derived from version.active via src/utils/paths.py
+  # Override here only if you need non-standard locations
+  train_path: ~   # default: model_store/data/<slug>/processed/train.bin
+  val_path: ~     # default: model_store/data/<slug>/processed/val.bin
+  
+  # FIX Protocol specific
+  fix_versions:
+    "4.2": "FIX 4.2"
+    "4.4": "FIX 4.4"
+    "5.0SP2": "FIX 5.0 SP2"
+    "Latest": "FIX Latest"
+  
+tokenizer:
+  type: "bpe"              # "bpe" for legacy or "huggingface_bpe" for true BPE
+  vocab_size: 1024
+  special_tokens:
+    - "<|pad|>"
+    - "<|bos|>"
+    - "<|eos|>"
+    - "<|fix|>"            # FIX message start
+    - "<|field|>"          # Field separator
+    - "<|eom|>"            # End of message
+
+inference:
+  temperature: 0.8
+  top_k: 50
+  top_p: 0.95
+  max_new_tokens: 512
+  use_kv_cache: true               # O(n) inference with KV-cache
+  use_constrained_decoding: false  # FSM-guided FIX grammar enforcement
+  beam_width: 0                    # 0 = sampling; >0 = beam search
+  fix_validity_weight: 0.3         # Weight for beam search FIX-validity re-ranking
+
+  # Quantization ("none", "dynamic_int8", "fp16")
+  quantization: "none"
+
+# LoRA fine-tuning defaults
+lora:
+  rank: 8
+  alpha: 16.0
+  dropout: 0.0
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "out_proj"
+
+# Data quality
+data_quality:
+  stratify_split: true              # Stratify train/val split by message type
+  min_quality_score: 60             # Minimum data quality score to proceed
+  
+logging:
+  log_dir: "logs"
+  tensorboard: true
+  wandb: false
+  print_interval: 10

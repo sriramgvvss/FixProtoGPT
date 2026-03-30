@@ -1,0 +1,12 @@
+{
+  "step": 100,
+  "epoch": 0,
+  "best_val_loss": 3.4826450032636154,
+  "train_samples": 8668,
+  "val_samples": 965,
+  "model_params": 19936256,
+  "device": "mps",
+  "saved_at": "2026-02-21 09:58:24",
+  "fix_version": "FIX.4.4",
+  "fix_versions_trained": []
+}

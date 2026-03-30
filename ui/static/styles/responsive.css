@@ -1,0 +1,107 @@
+/* ═══════════════════════════════════════════════════════════════
+   FixProtoGPT — Responsive Breakpoints
+   Tablets (≤992px), Phones (≤768px), Small phones (≤480px)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Tablets (≤992px) — sidebar collapses ───────────────────── */
+
+@media (max-width: 992px) {
+    .app-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .conv-sidebar {
+        position: fixed;
+        top: 0; right: -100%; bottom: 0;
+        width: min(380px, 85vw);
+        border-radius: 24px 0 0 24px;
+        max-height: 100vh;
+        z-index: 1050;
+        transition: right 0.35s ease;
+        padding-top: max(20px, env(safe-area-inset-top));
+    }
+
+    .conv-sidebar.open { right: 0; }
+
+    .conv-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 1040;
+        display: none;
+    }
+
+    .conv-overlay.open { display: block; }
+
+    .header { padding: 16px; border-radius: 16px; }
+    .header h1 { font-size: 1.5rem; }
+    .tab-content { padding: 14px 18px !important; }
+    .card-custom { border-radius: 16px; }
+
+    .d-flex.gap-2 { flex-wrap: wrap; }
+}
+
+/* ── Phones (≤768px) ────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+    }
+
+    .header { padding: 16px; border-radius: 12px; margin-bottom: 16px; }
+    .header h1 { font-size: 1.5rem; }
+    .header .subtitle { font-size: 0.85rem; }
+    .header .row { flex-direction: column; text-align: center; }
+    .header .col-md-4 { text-align: center !important; margin-top: 10px; }
+
+    .card-custom { border-radius: 12px; margin-bottom: 16px; }
+
+    .nav-tabs { padding: 8px 8px 0; gap: 4px; }
+    .nav-tabs .nav-link {
+        padding: 10px 12px;
+        font-size: 0.78rem;
+        border-radius: 10px 10px 0 0;
+    }
+    .nav-tabs .nav-link i { margin-right: 4px; font-size: 0.9rem; }
+    .nav-tabs .nav-link .tab-label { display: none; }
+
+    .tab-content { padding: 16px !important; border-radius: 0 0 12px 12px; }
+    .tab-content h3 { font-size: 1.2rem; }
+
+    .form-control, .form-select {
+        padding: 12px 14px;
+        font-size: 16px;  /* prevents iOS zoom on focus */
+        border-radius: 10px;
+    }
+
+    .btn-custom { padding: 12px 20px; font-size: 0.9rem; width: 100%; }
+    .output-box { padding: 14px; font-size: 0.82rem; min-height: 100px; border-radius: 10px; }
+    .example-btn { font-size: 0.78rem; padding: 6px 12px; }
+
+    .field-table { font-size: 0.78rem; }
+    .field-table th, .field-table td { padding: 8px 6px; }
+
+    .conv-card { margin-bottom: 10px; }
+    .conv-actions { flex-wrap: wrap; }
+}
+
+/* ── Small phones (≤480px) ──────────────────────────────────── */
+
+@media (max-width: 480px) {
+    .header h1 { font-size: 1.25rem; }
+    .header .subtitle { font-size: 0.75rem; }
+    .status-badge { font-size: 0.75rem; padding: 6px 12px; }
+
+    .nav-tabs .nav-link { padding: 8px 8px; font-size: 0.72rem; }
+
+    .tab-content { padding: 12px !important; }
+    .tab-content h3 { font-size: 1rem; }
+    .tab-content p.text-muted { font-size: 0.8rem; }
+
+    .btn-custom { padding: 10px 16px; }
+
+    .token-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

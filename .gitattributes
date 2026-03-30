@@ -1,0 +1,2 @@
+# Git LFS — track large model checkpoint files
+model_store/checkpoints/*/best.pt filter=lfs diff=lfs merge=lfs -text

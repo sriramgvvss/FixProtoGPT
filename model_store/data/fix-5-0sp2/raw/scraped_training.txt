@@ -1,0 +1,643 @@
+FIX Protocol Version: FIX.5.0SP2 with transport FIXT.1.1
+FIX 5.0 SP2 is the latest stable version of the FIX protocol specification.
+
+FIX Message Type 0: Heartbeat (session). Sent when no data has been sent for HeartBtInt seconds
+FIX Message Type 1: TestRequest (session). Force a heartbeat from the opposing application
+FIX Message Type 2: ResendRequest (session). Request retransmission of messages
+FIX Message Type 3: Reject (session). Session-level rejection of a message
+FIX Message Type 4: SequenceReset (session). Reset expected sequence number
+FIX Message Type 5: Logout (session). Initiate or confirm session termination
+FIX Message Type A: Logon (session). Authenticate and initiate a session
+FIX Message Type D: NewOrderSingle (pre-trade). Submit a new single order
+FIX Message Type E: NewOrderList (pre-trade). Submit a list of related orders
+FIX Message Type F: OrderCancelRequest (pre-trade). Request cancellation of an order
+FIX Message Type G: OrderCancelReplaceRequest (pre-trade). Request modification of an existing order
+FIX Message Type H: OrderStatusRequest (pre-trade). Request status of an order
+FIX Message Type AB: NewOrderMultileg (pre-trade). Submit a multi-leg order
+FIX Message Type AC: MultilegOrderCancelReplace (pre-trade). Modify a multi-leg order
+FIX Message Type AF: OrderMassStatusRequest (pre-trade). Request status of a group of orders
+FIX Message Type AQ: TradeCaptureReportRequestAck (post-trade). Acknowledge trade capture report request
+FIX Message Type CA: NewOrderCross (pre-trade). Submit a cross order
+FIX Message Type CB: CrossOrderCancelReplaceRequest (pre-trade). Modify a cross order
+FIX Message Type CC: CrossOrderCancelRequest (pre-trade). Cancel a cross order
+FIX Message Type q: OrderMassCancelRequest (pre-trade). Request mass cancellation of orders
+FIX Message Type r: OrderMassCancelReport (pre-trade). Report of mass cancel action
+FIX Message Type 8: ExecutionReport (trade). Confirm receipt, rejection, or execution of an order
+FIX Message Type 9: OrderCancelReject (trade). Reject a cancel or cancel/replace request
+FIX Message Type Q: DontKnowTrade (trade). Reject an execution or trade report
+FIX Message Type AE: TradeCaptureReport (post-trade). Report a trade between counterparties
+FIX Message Type AD: TradeCaptureReportRequest (post-trade). Request trade capture reports
+FIX Message Type AZ: TradeCaptureReportAck (post-trade). Acknowledge a trade capture report
+FIX Message Type J: Allocation (post-trade). Convey allocation instructions
+FIX Message Type P: AllocationAck (post-trade). Acknowledge an allocation
+FIX Message Type AS: AllocationReport (post-trade). Report allocation details
+FIX Message Type AT: AllocationReportAck (post-trade). Acknowledge an allocation report
+FIX Message Type AK: Confirmation (post-trade). Confirm trade allocation to a client
+FIX Message Type AU: ConfirmationAck (post-trade). Acknowledge confirmation
+FIX Message Type BH: ConfirmationRequest (post-trade). Request a confirmation
+FIX Message Type T: SettlementInstructions (post-trade). Convey settlement instructions
+FIX Message Type AV: SettlementInstructionRequest (post-trade). Request settlement instructions
+FIX Message Type BN: PositionReport (post-trade). Report a position
+FIX Message Type AM: PositionMaintenanceRequest (post-trade). Request a position change
+FIX Message Type AN: PositionMaintenanceReport (post-trade). Report result of position maintenance
+FIX Message Type AP: CollateralRequest (post-trade). Request collateral action
+FIX Message Type AY: CollateralAssignment (post-trade). Assign collateral
+FIX Message Type BB: CollateralResponse (post-trade). Response to collateral request
+FIX Message Type BA: CollateralReport (post-trade). Report collateral position
+FIX Message Type BG: CollateralInquiry (post-trade). Inquire about collateral
+FIX Message Type AX: RequestForPositions (post-trade). Request position information
+FIX Message Type AO: RequestForPositionsAck (post-trade). Acknowledge request for positions
+FIX Message Type V: MarketDataRequest (market-data). Request market data
+FIX Message Type W: MarketDataSnapshotFullRefresh (market-data). Full snapshot of market data
+FIX Message Type X: MarketDataIncrementalRefresh (market-data). Incremental update of market data
+FIX Message Type Y: MarketDataRequestReject (market-data). Reject a market data request
+FIX Message Type i: MassQuote (market-data). Submit mass quotes
+FIX Message Type b: MassQuoteAcknowledgement (market-data). Acknowledge mass quote
+FIX Message Type S: Quote (market-data). Submit a single quote
+FIX Message Type R: QuoteRequest (market-data). Request a quote
+FIX Message Type AI: QuoteStatusRequest (market-data). Request quote status
+FIX Message Type AJ: QuoteStatusReport (market-data). Report quote status
+FIX Message Type Z: QuoteCancel (market-data). Cancel one or more quotes
+FIX Message Type K: BidRequest (market-data). Request a bid response
+FIX Message Type L: BidResponse (market-data). Respond to a bid request
+FIX Message Type c: SecurityDefinitionRequest (reference-data). Request security definition
+FIX Message Type d: SecurityDefinition (reference-data). Security definition response
+FIX Message Type e: SecurityStatusRequest (reference-data). Request status of a security
+FIX Message Type f: SecurityStatus (reference-data). Security status response
+FIX Message Type o: RegistrationInstructions (reference-data). Provide registration instructions
+FIX Message Type p: RegistrationInstructionsResponse (reference-data). Response to registration instructions
+FIX Message Type v: SecurityListRequest (reference-data). Request list of securities
+FIX Message Type y: SecurityList (reference-data). List of securities
+FIX Message Type x: SecurityTypeRequest (reference-data). Request security types
+FIX Message Type w: SecurityTypes (reference-data). Response listing security types
+FIX Message Type BP: DerivativeSecurityListRequest (reference-data). Request derivative security list
+FIX Message Type BQ: DerivativeSecurityList (reference-data). Derivative security list response
+FIX Message Type j: BusinessMessageReject (business). Reject an application-level message
+FIX Message Type n: XMLMessage (business). Convey XML data within FIX
+FIX Message Type B: News (business). Convey news/text
+FIX Message Type C: Email (business). Convey an email
+FIX Message Type BC: NetworkCounterpartySystemStatusRequest (network). Request counterparty system status
+FIX Message Type BD: NetworkCounterpartySystemStatusResponse (network). Counterparty system status response
+FIX Message Type BJ: UserRequest (network). User management request
+FIX Message Type BK: UserResponse (network). User management response
+
+FIX Field 1: Account (STRING). Account mnemonic as agreed between buy and sell sides
+FIX Field 6: AvgPx (PRICE). Calculated average price of all fills on this order
+FIX Field 7: BeginSeqNo (SEQNUM). Message sequence number of first message in range to be resent
+FIX Field 8: BeginString (STRING). Identifies beginning of new message and protocol version. ALWAYS first field. For FIXT: FIXT.1.1
+FIX Field 9: BodyLength (LENGTH). Message length in bytes, forward to the CheckSum field
+FIX Field 10: CheckSum (STRING). Three byte, simple checksum. ALWAYS last field
+FIX Field 11: ClOrdID (STRING). Unique identifier for order as assigned by institution
+FIX Field 14: CumQty (QTY). Total number of shares filled
+FIX Field 15: Currency (CURRENCY). Identifies currency used for price
+FIX Field 16: EndSeqNo (SEQNUM). Message sequence number of last message in range to be resent
+FIX Field 17: ExecID (STRING). Unique identifier of execution message
+FIX Field 18: ExecInst (MULTIPLECHARVALUE). Instructions for order handling on exchange/market
+FIX Field 20: ExecTransType (CHAR). Identifies transaction type. Deprecated in FIX 5.0
+FIX Field 21: HandlInst (CHAR). Instructions for order handling on broker's side
+FIX Field 22: SecurityIDSource (STRING). Identifies class or source of the SecurityID value
+FIX Field 25: IOIQltyInd (CHAR). Relative quality of indication
+FIX Field 30: LastMkt (EXCHANGE). Market of execution for last fill
+FIX Field 31: LastPx (PRICE). Price of last fill
+FIX Field 32: LastQty (QTY). Quantity of last fill
+FIX Field 34: MsgSeqNum (SEQNUM). Integer message sequence number
+FIX Field 35: MsgType (STRING). Defines message type. Always third field in message
+FIX Field 36: NewSeqNo (SEQNUM). New sequence number
+FIX Field 37: OrderID (STRING). Unique identifier for order as assigned by sell-side
+FIX Field 38: OrderQty (QTY). Quantity ordered
+FIX Field 39: OrdStatus (CHAR). Identifies current status of order
+FIX Field 40: OrdType (CHAR). Order type
+FIX Field 41: OrigClOrdID (STRING). ClOrdID of the previous non-rejected order when canceling or replacing
+FIX Field 43: PossDupFlag (BOOLEAN). Indicates possible retransmission of message with this sequence number
+FIX Field 44: Price (PRICE). Price per unit of quantity
+FIX Field 45: RefSeqNum (SEQNUM). Reference message sequence number
+FIX Field 47: Rule80A (CHAR). Deprecated in FIX 5.0 – see OrderCapacity(528)
+FIX Field 48: SecurityID (STRING). Security identifier value
+FIX Field 49: SenderCompID (STRING). Assigned value used to identify firm sending message
+FIX Field 50: SenderSubID (STRING). Assigned value used to identify specific message originator
+FIX Field 52: SendingTime (UTCTIMESTAMP). Time of message transmission (always expressed in UTC)
+FIX Field 54: Side (CHAR). Side of order
+FIX Field 55: Symbol (STRING). Ticker symbol. Common, human understood representation of the security
+FIX Field 56: TargetCompID (STRING). Assigned value used to identify receiving firm
+FIX Field 57: TargetSubID (STRING). Assigned value used to identify specific individual or unit intended to receive message
+FIX Field 58: Text (STRING). Free format text string
+FIX Field 59: TimeInForce (CHAR). Specifies how long the order remains in effect
+FIX Field 60: TransactTime (UTCTIMESTAMP). Timestamp when the business transaction represented by message occurred
+FIX Field 63: SettlType (STRING). Indicates order settlement period
+FIX Field 64: SettlDate (LOCALMKTDATE). Specific date of trade settlement
+FIX Field 65: SymbolSfx (STRING). Additional information about the security
+FIX Field 75: TradeDate (LOCALMKTDATE). Indicates date of trade referenced in this message
+FIX Field 76: ExecBroker (STRING). Identifies executing / give-up broker
+FIX Field 77: PositionEffect (CHAR). Indicates whether resulting position should be an opening or closing position
+FIX Field 97: PossResend (BOOLEAN). Indicates that message may contain information that has been sent under another sequence number
+FIX Field 98: EncryptMethod (INT). Method of encryption
+FIX Field 99: StopPx (PRICE). Price per unit of quantity for stop orders
+FIX Field 100: ExDestination (EXCHANGE). Execution destination as defined by institution
+FIX Field 102: CxlRejReason (INT). Code to identify reason for cancel rejection
+FIX Field 103: OrdRejReason (INT). Code to identify reason for order rejection
+FIX Field 108: HeartBtInt (INT). Heartbeat interval (seconds)
+FIX Field 109: ClientID (STRING). Firm identifier used in third party-Loss transactions
+FIX Field 110: MinQty (QTY). Minimum quantity of an order to be executed
+FIX Field 111: MaxFloor (QTY). Maximum number of shares within an order to be shown on the exchange floor
+FIX Field 112: TestReqID (STRING). Identifier included in Test Request message to be returned in resulting Heartbeat
+FIX Field 122: OrigSendingTime (UTCTIMESTAMP). Original time of message transmission when resending
+FIX Field 123: GapFillFlag (BOOLEAN). Indicates that the Sequence Reset message is replacing administrative or application messages
+FIX Field 126: ExpireTime (UTCTIMESTAMP). Time/Date of order expiration
+FIX Field 127: DKReason (CHAR). Reason for execution rejection
+FIX Field 128: DeliverToCompID (STRING). Assigned value used to identify the firm targeted to receive message
+FIX Field 129: DeliverToSubID (STRING). Assigned value used to identify specific individual or unit at target firm
+FIX Field 141: ResetSeqNumFlag (BOOLEAN). Indicates that both sides of the FIX session should reset sequence numbers
+FIX Field 150: ExecType (CHAR). Describes the specific execution report
+FIX Field 151: LeavesQty (QTY). Quantity open for further execution
+FIX Field 152: CashOrderQty (QTY). Specifies the approximate order quantity desired in total monetary units
+FIX Field 167: SecurityType (STRING). Indicates type of security
+FIX Field 168: EffectiveTime (UTCTIMESTAMP). Time the details within the message should take effect
+FIX Field 200: MaturityMonthYear (MONTHYEAR). Month and Year of the maturity
+FIX Field 201: PutOrCall (INT). Indicates whether an Option is a Put or Call
+FIX Field 202: StrikePrice (PRICE). Strike price
+FIX Field 204: CustomerOrFirm (INT). Used for different account types
+FIX Field 206: OptAttribute (CHAR). Can be used for different identification of option
+FIX Field 207: SecurityExchange (EXCHANGE). Market used to help identify a security
+FIX Field 211: PegOffsetValue (FLOAT). Amount (usually in decimals) used to compute the bid or offer
+FIX Field 262: MDReqID (STRING). Unique identifier for Market Data Request
+FIX Field 263: SubscriptionRequestType (CHAR). Subscription Request Type
+FIX Field 264: MarketDepth (INT). Depth of market for Book Snapshot / Incremental updates
+FIX Field 265: MDUpdateType (INT). Specifies the type of Market Data update
+FIX Field 266: AggregatedBook (BOOLEAN). Specifies whether or not book entries should be aggregated
+FIX Field 267: NoMDEntryTypes (NUMINGROUP). Number of MDEntryType entries
+FIX Field 268: NoMDEntries (NUMINGROUP). Number of entries in Market Data message
+FIX Field 269: MDEntryType (CHAR). Type of Market Data entry
+FIX Field 270: MDEntryPx (PRICE). Price of the Market Data Entry
+FIX Field 271: MDEntrySize (QTY). Quantity represented by the Market Data Entry
+FIX Field 272: MDEntryDate (UTCDATEONLY). Date of Market Data Entry
+FIX Field 273: MDEntryTime (UTCTIMEONLY). Time of Market Data Entry
+FIX Field 274: TickDirection (CHAR). Direction of the tick
+FIX Field 275: MDMkt (EXCHANGE). Market of the MDEntry
+FIX Field 276: QuoteCondition (MULTIPLESTRINGVALUE). Space-delimited list of conditions describing a quote
+FIX Field 277: TradeCondition (MULTIPLESTRINGVALUE). Space-delimited list of conditions describing a trade
+FIX Field 278: MDEntryID (STRING). Unique identifier for Market Data Entry
+FIX Field 279: MDUpdateAction (CHAR). Type of Market Data update action
+FIX Field 280: MDEntryRefID (STRING). Reference to MDEntryID of previous update
+FIX Field 447: PartyIDSource (CHAR). Identifies class or source of PartyID
+FIX Field 448: PartyID (STRING). Party identifier/code
+FIX Field 452: PartyRole (INT). Identifies the type or role of a PartyID
+FIX Field 453: NoPartyIDs (NUMINGROUP). Number of PartyID entries
+FIX Field 528: OrderCapacity (CHAR). Designates the capacity of the firm placing the order
+FIX Field 529: OrderRestrictions (MULTIPLESTRINGVALUE). Restrictions associated with an order
+FIX Field 544: CashMargin (CHAR). Identifies whether an order is a margin order or a cash order
+FIX Field 553: Username (STRING). Userid or username
+FIX Field 554: Password (STRING). Password or passphrase
+FIX Field 555: NoLegs (NUMINGROUP). Number of legs in multi-leg order
+FIX Field 600: LegSymbol (STRING). Multi-leg instrument's individual leg's Symbol
+FIX Field 847: TargetStrategy (INT). Target strategy of the order
+FIX Field 848: TargetStrategyParameters (STRING). Field to allow further specification of the TargetStrategy
+FIX Field 856: TradeReportType (INT). Type of Trade Report
+FIX Field 880: TrdMatchID (STRING). Identifier assigned to a trade by a matching system
+FIX Field 1128: ApplVerID (STRING). Specifies the service pack release being applied to message at application level
+FIX Field 1129: CstmApplVerID (STRING). Specifies a custom extension to message being applied
+FIX Field 1137: DefaultApplVerID (STRING). Specifies the default application version ID for a session
+
+Side(54) value 1: Buy
+Side(54) value 2: Sell
+Side(54) value 3: BuyMinus
+Side(54) value 4: SellPlus
+Side(54) value 5: SellShort
+Side(54) value 6: SellShortExempt
+Side(54) value 7: Undisclosed
+Side(54) value 8: Cross
+Side(54) value 9: CrossShort
+Side(54) value A: CrossShortExempt
+Side(54) value B: AsDefined
+Side(54) value C: Opposite
+Side(54) value D: Subscribe
+Side(54) value E: Redeem
+Side(54) value F: Lend
+Side(54) value G: Borrow
+OrdType(40) value 1: Market
+OrdType(40) value 2: Limit
+OrdType(40) value 3: Stop
+OrdType(40) value 4: StopLimit
+OrdType(40) value 5: MarketOnClose
+OrdType(40) value 6: WithOrWithout
+OrdType(40) value 7: LimitOrBetter
+OrdType(40) value 8: LimitWithOrWithout
+OrdType(40) value 9: OnBasis
+OrdType(40) value A: OnClose
+OrdType(40) value B: LimitOnClose
+OrdType(40) value C: ForexMarket
+OrdType(40) value D: PreviouslyQuoted
+OrdType(40) value E: PreviouslyIndicated
+OrdType(40) value F: ForexLimit
+OrdType(40) value G: ForexSwap
+OrdType(40) value H: ForexPreviouslyQuoted
+OrdType(40) value I: Funari
+OrdType(40) value J: MarketIfTouched
+OrdType(40) value K: MarketWithLeftOverAsLimit
+OrdType(40) value L: PreviousFundValuationPoint
+OrdType(40) value M: NextFundValuationPoint
+OrdType(40) value P: Pegged
+OrdType(40) value Q: CounterOrderSelection
+TimeInForce(59) value 0: Day
+TimeInForce(59) value 1: GoodTillCancel
+TimeInForce(59) value 2: AtTheOpening
+TimeInForce(59) value 3: ImmediateOrCancel
+TimeInForce(59) value 4: FillOrKill
+TimeInForce(59) value 5: GoodTillCrossing
+TimeInForce(59) value 6: GoodTillDate
+TimeInForce(59) value 7: AtTheClose
+TimeInForce(59) value 8: GoodThroughCrossing
+TimeInForce(59) value 9: AtCrossing
+OrdStatus(39) value 0: New
+OrdStatus(39) value 1: PartiallyFilled
+OrdStatus(39) value 2: Filled
+OrdStatus(39) value 3: DoneForDay
+OrdStatus(39) value 4: Canceled
+OrdStatus(39) value 5: Replaced
+OrdStatus(39) value 6: PendingCancel
+OrdStatus(39) value 7: Stopped
+OrdStatus(39) value 8: Rejected
+OrdStatus(39) value 9: Suspended
+OrdStatus(39) value A: PendingNew
+OrdStatus(39) value B: Calculated
+OrdStatus(39) value C: Expired
+OrdStatus(39) value D: AcceptedForBidding
+OrdStatus(39) value E: PendingReplace
+ExecType(150) value 0: New
+ExecType(150) value 3: DoneForDay
+ExecType(150) value 4: Canceled
+ExecType(150) value 5: Replaced
+ExecType(150) value 6: PendingCancel
+ExecType(150) value 7: Stopped
+ExecType(150) value 8: Rejected
+ExecType(150) value 9: Suspended
+ExecType(150) value A: PendingNew
+ExecType(150) value B: Calculated
+ExecType(150) value C: Expired
+ExecType(150) value D: Restated
+ExecType(150) value E: PendingReplace
+ExecType(150) value F: Trade
+ExecType(150) value G: TradeCorrect
+ExecType(150) value H: TradeCancel
+ExecType(150) value I: OrderStatus
+ExecType(150) value J: TradeInAClearingHold
+ExecType(150) value K: TradeHasBeenReleasedToClearing
+ExecType(150) value L: TriggeredOrActivatedBySystem
+HandlInst(21) value 1: AutomatedExecutionNoIntervention
+HandlInst(21) value 2: AutomatedExecutionInterventionOK
+HandlInst(21) value 3: ManualOrder
+EncryptMethod(98) value 0: None
+EncryptMethod(98) value 1: PKCS
+EncryptMethod(98) value 2: DES
+EncryptMethod(98) value 3: PKCS_DES
+EncryptMethod(98) value 4: PGP_DES
+EncryptMethod(98) value 5: PGP_DES_MD5
+EncryptMethod(98) value 6: PEM_DES_MD5
+SubscriptionRequestType(263) value 0: Snapshot
+SubscriptionRequestType(263) value 1: SnapshotAndUpdates
+SubscriptionRequestType(263) value 2: DisablePreviousSnapshot
+MDUpdateType(265) value 0: FullRefresh
+MDUpdateType(265) value 1: IncrementalRefresh
+MDEntryType(269) value 0: Bid
+MDEntryType(269) value 1: Offer
+MDEntryType(269) value 2: Trade
+MDEntryType(269) value 3: IndexValue
+MDEntryType(269) value 4: OpeningPrice
+MDEntryType(269) value 5: ClosingPrice
+MDEntryType(269) value 6: SettlementPrice
+MDEntryType(269) value 7: TradingSessionHighPrice
+MDEntryType(269) value 8: TradingSessionLowPrice
+MDEntryType(269) value 9: TradingSessionVWAPPrice
+MDEntryType(269) value A: Imbalance
+MDEntryType(269) value B: TradeVolume
+MDEntryType(269) value C: OpenInterest
+SecurityIDSource(22) value 1: CUSIP
+SecurityIDSource(22) value 2: SEDOL
+SecurityIDSource(22) value 3: QUIK
+SecurityIDSource(22) value 4: ISINNumber
+SecurityIDSource(22) value 5: RICCode
+SecurityIDSource(22) value 6: ISOCurrencyCode
+SecurityIDSource(22) value 7: ISOCountryCode
+SecurityIDSource(22) value 8: ExchangeSymbol
+SecurityIDSource(22) value 9: ConsolidatedTapeAssociation
+SecurityIDSource(22) value A: BloombergSymbol
+SecurityIDSource(22) value B: Wertpapier
+SecurityIDSource(22) value C: Dutch
+SecurityIDSource(22) value D: Valoren
+SecurityIDSource(22) value E: Sicovam
+SecurityIDSource(22) value F: Belgian
+SecurityIDSource(22) value G: Common
+SecurityIDSource(22) value H: ClearingHouseNumber
+SecurityIDSource(22) value I: ISDAFPMLProductSpecification
+SecurityIDSource(22) value J: OptionPriceReportingAuthority
+SecurityIDSource(22) value K: ISDAFPMLProductURL
+SecurityIDSource(22) value L: LetterOfCredit
+SecurityType(167) value CS: CommonStock
+SecurityType(167) value PS: PreferredStock
+SecurityType(167) value REPO: Repurchase
+SecurityType(167) value FORWARD: ForwardRateAgreement
+SecurityType(167) value BUYSELL: BuySellback
+SecurityType(167) value SECLOAN: SecuritiesLoan
+SecurityType(167) value SECPLEDGE: SecuritiesPledge
+SecurityType(167) value FUT: Future
+SecurityType(167) value OPT: Option
+SecurityType(167) value WAR: Warrant
+SecurityType(167) value MF: MutualFund
+SecurityType(167) value MLEG: MultilegInstrument
+SecurityType(167) value FXSPOT: FXSpot
+SecurityType(167) value FXFWD: FXForward
+SecurityType(167) value FXSWAP: FXSwap
+PositionEffect(77) value C: Close
+PositionEffect(77) value F: FIFO
+PositionEffect(77) value O: Open
+PositionEffect(77) value R: Rolled
+OrderCapacity(528) value A: Agency
+OrderCapacity(528) value G: Proprietary
+OrderCapacity(528) value I: Individual
+OrderCapacity(528) value P: Principal
+OrderCapacity(528) value R: RisklessPrincipal
+OrderCapacity(528) value W: AgentForOtherMember
+
+FIX Data Type INT: Sequence of digits without commas or decimals, may include leading sign
+FIX Data Type LENGTH: Non-negative integer representing message length
+FIX Data Type NUMINGROUP: Number of repeating group entries
+FIX Data Type SEQNUM: Message sequence number (positive integer)
+FIX Data Type TAGNUM: FIX field tag number (positive integer)
+FIX Data Type FLOAT: Sequence of digits with optional decimal point and sign
+FIX Data Type QTY: Float quantity value
+FIX Data Type PRICE: Float price value (typically 2 decimal places)
+FIX Data Type PRICEOFFSET: Float value representing a price offset
+FIX Data Type AMT: Float value typically representing a monetary amount
+FIX Data Type PERCENTAGE: Float value representing a percentage
+FIX Data Type CHAR: Single character value
+FIX Data Type BOOLEAN: Y = Yes/True, N = No/False
+FIX Data Type STRING: Alphanumeric free format strings
+FIX Data Type MULTIPLECHARVALUE: Space-delimited multiple character fields
+FIX Data Type MULTIPLESTRINGVALUE: Space-delimited multiple string fields
+FIX Data Type CURRENCY: ISO 4217 currency code (3 chars)
+FIX Data Type EXCHANGE: ISO 10383 Market Identifier Code (4 chars)
+FIX Data Type UTCTIMESTAMP: UTC date/time: YYYYMMDD-HH:MM:SS.sss
+FIX Data Type UTCTIMEONLY: UTC time only: HH:MM:SS.sss
+FIX Data Type UTCDATEONLY: UTC date only: YYYYMMDD
+FIX Data Type LOCALMKTDATE: Local date: YYYYMMDD
+FIX Data Type MONTHYEAR: Month-year: YYYYMM or YYYYMMDD or YYYYMMwN
+FIX Data Type DATA: Raw data with separate length field
+FIX Data Type XMLDATA: XML-encoded data
+
+FIX Component StandardHeader: Required header for all FIX messages (FIXT 1.1). Fields: BeginString, BodyLength, MsgType, SenderCompID, TargetCompID, MsgSeqNum, SendingTime, PossDupFlag, PossResend, OrigSendingTime, ApplVerID, CstmApplVerID
+FIX Component StandardTrailer: Required trailer for all FIX messages. Fields: CheckSum
+FIX Component Instrument: Identifies a security. Fields: Symbol, SymbolSfx, SecurityID, SecurityIDSource, SecurityType, MaturityMonthYear, PutOrCall, StrikePrice, OptAttribute, SecurityExchange, Currency
+FIX Component OrderQtyData: Specifies the quantity of an order. Fields: OrderQty, CashOrderQty
+FIX Component Parties: Identifies parties in a trade. Fields: NoPartyIDs, PartyID, PartyIDSource, PartyRole
+FIX Component SpreadOrBenchmarkCurveData: Spread or benchmark curve data. Fields: 218, 220, 221, 222, 662, 663, 699
+FIX Component CommissionData: Commission data. Fields: 12, 13, 479, 497
+
+Buy 65500 shares of AAPL at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=4507|52=20260216-00:22:30.000|1128=9|11=ORD42098|21=1|55=AAPL|54=1|38=65500|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 65500 shares of AAPL at limit price $100.1
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3658|52=20260216-00:22:30.000|1128=9|11=ORD28289|21=1|55=AAPL|54=1|38=65500|40=2|44=100.1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 65500 shares of AAPL at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1680|52=20260216-00:22:30.000|1128=9|11=ORD98696|21=1|55=AAPL|54=2|38=65500|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 65500 shares of AAPL at limit price $100.1
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=8936|52=20260216-00:22:30.000|1128=9|11=ORD21395|21=1|55=AAPL|54=2|38=65500|40=2|44=100.1|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 30300 AAPL shares at $239.86
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=489|52=20260216-00:22:30.000|1128=9|37=EXEC22280|11=ORD38657|17=EXEC40495|150=F|39=2|55=AAPL|54=1|38=30300|14=30300|151=0|6=239.86|31=239.86|32=30300|60=20260216-00:22:30.000|10=000|
+Buy 51800 shares of GOOGL at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=9196|52=20260216-00:22:30.000|1128=9|11=ORD36062|21=1|55=GOOGL|54=1|38=51800|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 51800 shares of GOOGL at limit price $320.91
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=8929|52=20260216-00:22:30.000|1128=9|11=ORD64987|21=1|55=GOOGL|54=1|38=51800|40=2|44=320.91|59=0|60=20260216-00:22:30.000|10=000|
+Sell 51800 shares of GOOGL at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3612|52=20260216-00:22:30.000|1128=9|11=ORD68878|21=1|55=GOOGL|54=2|38=51800|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 51800 shares of GOOGL at limit price $320.91
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=9655|52=20260216-00:22:30.000|1128=9|11=ORD46463|21=1|55=GOOGL|54=2|38=51800|40=2|44=320.91|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 41500 GOOGL shares at $441.19
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=2616|52=20260216-00:22:30.000|1128=9|37=EXEC65392|11=ORD54597|17=EXEC46421|150=F|39=2|55=GOOGL|54=1|38=41500|14=41500|151=0|6=441.19|31=441.19|32=41500|60=20260216-00:22:30.000|10=000|
+Buy 16000 shares of MSFT at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=5515|52=20260216-00:22:30.000|1128=9|11=ORD23396|21=1|55=MSFT|54=1|38=16000|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 16000 shares of MSFT at limit price $146.89
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1520|52=20260216-00:22:30.000|1128=9|11=ORD59797|21=1|55=MSFT|54=1|38=16000|40=2|44=146.89|59=0|60=20260216-00:22:30.000|10=000|
+Sell 16000 shares of MSFT at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1585|52=20260216-00:22:30.000|1128=9|11=ORD57052|21=1|55=MSFT|54=2|38=16000|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 16000 shares of MSFT at limit price $146.89
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=5636|52=20260216-00:22:30.000|1128=9|11=ORD89131|21=1|55=MSFT|54=2|38=16000|40=2|44=146.89|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 13600 MSFT shares at $413.21
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=7528|52=20260216-00:22:30.000|1128=9|37=EXEC80284|11=ORD26361|17=EXEC59615|150=F|39=2|55=MSFT|54=1|38=13600|14=13600|151=0|6=413.21|31=413.21|32=13600|60=20260216-00:22:30.000|10=000|
+Buy 8100 shares of AMZN at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=5926|52=20260216-00:22:30.000|1128=9|11=ORD85674|21=1|55=AMZN|54=1|38=8100|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 8100 shares of AMZN at limit price $298.42
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3151|52=20260216-00:22:30.000|1128=9|11=ORD19116|21=1|55=AMZN|54=1|38=8100|40=2|44=298.42|59=0|60=20260216-00:22:30.000|10=000|
+Sell 8100 shares of AMZN at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=751|52=20260216-00:22:30.000|1128=9|11=ORD96673|21=1|55=AMZN|54=2|38=8100|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 8100 shares of AMZN at limit price $298.42
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3734|52=20260216-00:22:30.000|1128=9|11=ORD47930|21=1|55=AMZN|54=2|38=8100|40=2|44=298.42|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 4100 AMZN shares at $434.89
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=1655|52=20260216-00:22:30.000|1128=9|37=EXEC59823|11=ORD46434|17=EXEC69429|150=F|39=2|55=AMZN|54=1|38=4100|14=4100|151=0|6=434.89|31=434.89|32=4100|60=20260216-00:22:30.000|10=000|
+Buy 65100 shares of TSLA at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=2665|52=20260216-00:22:30.000|1128=9|11=ORD58520|21=1|55=TSLA|54=1|38=65100|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 65100 shares of TSLA at limit price $425.35
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=5821|52=20260216-00:22:30.000|1128=9|11=ORD37460|21=1|55=TSLA|54=1|38=65100|40=2|44=425.35|59=0|60=20260216-00:22:30.000|10=000|
+Sell 65100 shares of TSLA at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=4375|52=20260216-00:22:30.000|1128=9|11=ORD99593|21=1|55=TSLA|54=2|38=65100|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 65100 shares of TSLA at limit price $425.35
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1170|52=20260216-00:22:30.000|1128=9|11=ORD89840|21=1|55=TSLA|54=2|38=65100|40=2|44=425.35|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 32600 TSLA shares at $127.01
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=4011|52=20260216-00:22:30.000|1128=9|37=EXEC31417|11=ORD70589|17=EXEC59735|150=F|39=2|55=TSLA|54=1|38=32600|14=32600|151=0|6=127.01|31=127.01|32=32600|60=20260216-00:22:30.000|10=000|
+Buy 27700 shares of META at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=9126|52=20260216-00:22:30.000|1128=9|11=ORD38785|21=1|55=META|54=1|38=27700|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 27700 shares of META at limit price $495.29
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=5314|52=20260216-00:22:30.000|1128=9|11=ORD17331|21=1|55=META|54=1|38=27700|40=2|44=495.29|59=0|60=20260216-00:22:30.000|10=000|
+Sell 27700 shares of META at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3753|52=20260216-00:22:30.000|1128=9|11=ORD14207|21=1|55=META|54=2|38=27700|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 27700 shares of META at limit price $495.29
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=5169|52=20260216-00:22:30.000|1128=9|11=ORD62581|21=1|55=META|54=2|38=27700|40=2|44=495.29|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 13800 META shares at $79.78
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=9293|52=20260216-00:22:30.000|1128=9|37=EXEC51245|11=ORD37869|17=EXEC95909|150=F|39=2|55=META|54=1|38=13800|14=13800|151=0|6=79.78|31=79.78|32=13800|60=20260216-00:22:30.000|10=000|
+Buy 51200 shares of NVDA at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=7518|52=20260216-00:22:30.000|1128=9|11=ORD28726|21=1|55=NVDA|54=1|38=51200|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 51200 shares of NVDA at limit price $228.03
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=4340|52=20260216-00:22:30.000|1128=9|11=ORD28301|21=1|55=NVDA|54=1|38=51200|40=2|44=228.03|59=0|60=20260216-00:22:30.000|10=000|
+Sell 51200 shares of NVDA at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=4041|52=20260216-00:22:30.000|1128=9|11=ORD83579|21=1|55=NVDA|54=2|38=51200|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 51200 shares of NVDA at limit price $228.03
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=8831|52=20260216-00:22:30.000|1128=9|11=ORD44438|21=1|55=NVDA|54=2|38=51200|40=2|44=228.03|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 38300 NVDA shares at $313.06
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=9561|52=20260216-00:22:30.000|1128=9|37=EXEC62350|11=ORD57447|17=EXEC38746|150=F|39=2|55=NVDA|54=1|38=38300|14=38300|151=0|6=313.06|31=313.06|32=38300|60=20260216-00:22:30.000|10=000|
+Buy 14200 shares of JPM at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1490|52=20260216-00:22:30.000|1128=9|11=ORD16175|21=1|55=JPM|54=1|38=14200|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 14200 shares of JPM at limit price $279.29
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1797|52=20260216-00:22:30.000|1128=9|11=ORD30033|21=1|55=JPM|54=1|38=14200|40=2|44=279.29|59=0|60=20260216-00:22:30.000|10=000|
+Sell 14200 shares of JPM at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=2622|52=20260216-00:22:30.000|1128=9|11=ORD99192|21=1|55=JPM|54=2|38=14200|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 14200 shares of JPM at limit price $279.29
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=6917|52=20260216-00:22:30.000|1128=9|11=ORD88172|21=1|55=JPM|54=2|38=14200|40=2|44=279.29|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 3300 JPM shares at $223.15
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=9764|52=20260216-00:22:30.000|1128=9|37=EXEC71348|11=ORD79352|17=EXEC42953|150=F|39=2|55=JPM|54=1|38=3300|14=3300|151=0|6=223.15|31=223.15|32=3300|60=20260216-00:22:30.000|10=000|
+Buy 99500 shares of BAC at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=189|52=20260216-00:22:30.000|1128=9|11=ORD99166|21=1|55=BAC|54=1|38=99500|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 99500 shares of BAC at limit price $298.95
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1877|52=20260216-00:22:30.000|1128=9|11=ORD99353|21=1|55=BAC|54=1|38=99500|40=2|44=298.95|59=0|60=20260216-00:22:30.000|10=000|
+Sell 99500 shares of BAC at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=8798|52=20260216-00:22:30.000|1128=9|11=ORD44973|21=1|55=BAC|54=2|38=99500|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 99500 shares of BAC at limit price $298.95
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=5574|52=20260216-00:22:30.000|1128=9|11=ORD24621|21=1|55=BAC|54=2|38=99500|40=2|44=298.95|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 15100 BAC shares at $245.64
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=7434|52=20260216-00:22:30.000|1128=9|37=EXEC10425|11=ORD44522|17=EXEC75612|150=F|39=2|55=BAC|54=1|38=15100|14=15100|151=0|6=245.64|31=245.64|32=15100|60=20260216-00:22:30.000|10=000|
+Buy 78100 shares of GS at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1744|52=20260216-00:22:30.000|1128=9|11=ORD91959|21=1|55=GS|54=1|38=78100|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 78100 shares of GS at limit price $130.39
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=4890|52=20260216-00:22:30.000|1128=9|11=ORD93748|21=1|55=GS|54=1|38=78100|40=2|44=130.39|59=0|60=20260216-00:22:30.000|10=000|
+Sell 78100 shares of GS at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=8318|52=20260216-00:22:30.000|1128=9|11=ORD89818|21=1|55=GS|54=2|38=78100|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 78100 shares of GS at limit price $130.39
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3259|52=20260216-00:22:30.000|1128=9|11=ORD30032|21=1|55=GS|54=2|38=78100|40=2|44=130.39|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 19200 GS shares at $393.13
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=8838|52=20260216-00:22:30.000|1128=9|37=EXEC79514|11=ORD10074|17=EXEC88504|150=F|39=2|55=GS|54=1|38=19200|14=19200|151=0|6=393.13|31=393.13|32=19200|60=20260216-00:22:30.000|10=000|
+Buy 33200 shares of MS at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1833|52=20260216-00:22:30.000|1128=9|11=ORD57576|21=1|55=MS|54=1|38=33200|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 33200 shares of MS at limit price $269.87
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=5039|52=20260216-00:22:30.000|1128=9|11=ORD41385|21=1|55=MS|54=1|38=33200|40=2|44=269.87|59=0|60=20260216-00:22:30.000|10=000|
+Sell 33200 shares of MS at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=950|52=20260216-00:22:30.000|1128=9|11=ORD41571|21=1|55=MS|54=2|38=33200|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 33200 shares of MS at limit price $269.87
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=9296|52=20260216-00:22:30.000|1128=9|11=ORD20322|21=1|55=MS|54=2|38=33200|40=2|44=269.87|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 4400 MS shares at $379.36
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=1134|52=20260216-00:22:30.000|1128=9|37=EXEC79822|11=ORD26483|17=EXEC26828|150=F|39=2|55=MS|54=1|38=4400|14=4400|151=0|6=379.36|31=379.36|32=4400|60=20260216-00:22:30.000|10=000|
+Buy 67600 shares of C at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=9008|52=20260216-00:22:30.000|1128=9|11=ORD31643|21=1|55=C|54=1|38=67600|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 67600 shares of C at limit price $263.88
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=4343|52=20260216-00:22:30.000|1128=9|11=ORD79163|21=1|55=C|54=1|38=67600|40=2|44=263.88|59=0|60=20260216-00:22:30.000|10=000|
+Sell 67600 shares of C at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=9939|52=20260216-00:22:30.000|1128=9|11=ORD65461|21=1|55=C|54=2|38=67600|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 67600 shares of C at limit price $263.88
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3471|52=20260216-00:22:30.000|1128=9|11=ORD80686|21=1|55=C|54=2|38=67600|40=2|44=263.88|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 38700 C shares at $378.47
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=3296|52=20260216-00:22:30.000|1128=9|37=EXEC50857|11=ORD62296|17=EXEC98039|150=F|39=2|55=C|54=1|38=38700|14=38700|151=0|6=378.47|31=378.47|32=38700|60=20260216-00:22:30.000|10=000|
+Buy 66600 shares of WFC at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=8480|52=20260216-00:22:30.000|1128=9|11=ORD69177|21=1|55=WFC|54=1|38=66600|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 66600 shares of WFC at limit price $218.04
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1983|52=20260216-00:22:30.000|1128=9|11=ORD42493|21=1|55=WFC|54=1|38=66600|40=2|44=218.04|59=0|60=20260216-00:22:30.000|10=000|
+Sell 66600 shares of WFC at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3682|52=20260216-00:22:30.000|1128=9|11=ORD18392|21=1|55=WFC|54=2|38=66600|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 66600 shares of WFC at limit price $218.04
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=5540|52=20260216-00:22:30.000|1128=9|11=ORD12757|21=1|55=WFC|54=2|38=66600|40=2|44=218.04|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 30200 WFC shares at $299.26
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=9642|52=20260216-00:22:30.000|1128=9|37=EXEC38864|11=ORD10942|17=EXEC19305|150=F|39=2|55=WFC|54=1|38=30200|14=30200|151=0|6=299.26|31=299.26|32=30200|60=20260216-00:22:30.000|10=000|
+Buy 72500 shares of BRK.B at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3751|52=20260216-00:22:30.000|1128=9|11=ORD18834|21=1|55=BRK.B|54=1|38=72500|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 72500 shares of BRK.B at limit price $334.0
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=515|52=20260216-00:22:30.000|1128=9|11=ORD53309|21=1|55=BRK.B|54=1|38=72500|40=2|44=334.0|59=0|60=20260216-00:22:30.000|10=000|
+Sell 72500 shares of BRK.B at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1161|52=20260216-00:22:30.000|1128=9|11=ORD77391|21=1|55=BRK.B|54=2|38=72500|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 72500 shares of BRK.B at limit price $334.0
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3900|52=20260216-00:22:30.000|1128=9|11=ORD46500|21=1|55=BRK.B|54=2|38=72500|40=2|44=334.0|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 34300 BRK.B shares at $268.44
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=8835|52=20260216-00:22:30.000|1128=9|37=EXEC27342|11=ORD84847|17=EXEC85525|150=F|39=2|55=BRK.B|54=1|38=34300|14=34300|151=0|6=268.44|31=268.44|32=34300|60=20260216-00:22:30.000|10=000|
+Buy 48500 shares of V at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=7750|52=20260216-00:22:30.000|1128=9|11=ORD63354|21=1|55=V|54=1|38=48500|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 48500 shares of V at limit price $159.35
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3120|52=20260216-00:22:30.000|1128=9|11=ORD22363|21=1|55=V|54=1|38=48500|40=2|44=159.35|59=0|60=20260216-00:22:30.000|10=000|
+Sell 48500 shares of V at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1589|52=20260216-00:22:30.000|1128=9|11=ORD96374|21=1|55=V|54=2|38=48500|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 48500 shares of V at limit price $159.35
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=7063|52=20260216-00:22:30.000|1128=9|11=ORD56438|21=1|55=V|54=2|38=48500|40=2|44=159.35|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 21700 V shares at $235.0
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=888|52=20260216-00:22:30.000|1128=9|37=EXEC98259|11=ORD95649|17=EXEC94696|150=F|39=2|55=V|54=1|38=21700|14=21700|151=0|6=235.0|31=235.0|32=21700|60=20260216-00:22:30.000|10=000|
+Buy 10100 shares of MA at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=5560|52=20260216-00:22:30.000|1128=9|11=ORD24322|21=1|55=MA|54=1|38=10100|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 10100 shares of MA at limit price $77.28
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=4074|52=20260216-00:22:30.000|1128=9|11=ORD35112|21=1|55=MA|54=1|38=10100|40=2|44=77.28|59=0|60=20260216-00:22:30.000|10=000|
+Sell 10100 shares of MA at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=3117|52=20260216-00:22:30.000|1128=9|11=ORD80292|21=1|55=MA|54=2|38=10100|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 10100 shares of MA at limit price $77.28
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=7351|52=20260216-00:22:30.000|1128=9|11=ORD28373|21=1|55=MA|54=2|38=10100|40=2|44=77.28|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 21700 MA shares at $132.57
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=7580|52=20260216-00:22:30.000|1128=9|37=EXEC42742|11=ORD19880|17=EXEC68082|150=F|39=2|55=MA|54=1|38=21700|14=21700|151=0|6=132.57|31=132.57|32=21700|60=20260216-00:22:30.000|10=000|
+Buy 82800 shares of UNH at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=9017|52=20260216-00:22:30.000|1128=9|11=ORD22833|21=1|55=UNH|54=1|38=82800|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 82800 shares of UNH at limit price $437.61
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=829|52=20260216-00:22:30.000|1128=9|11=ORD95477|21=1|55=UNH|54=1|38=82800|40=2|44=437.61|59=0|60=20260216-00:22:30.000|10=000|
+Sell 82800 shares of UNH at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=8857|52=20260216-00:22:30.000|1128=9|11=ORD11934|21=1|55=UNH|54=2|38=82800|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 82800 shares of UNH at limit price $437.61
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1529|52=20260216-00:22:30.000|1128=9|11=ORD40982|21=1|55=UNH|54=2|38=82800|40=2|44=437.61|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 8600 UNH shares at $232.89
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=7887|52=20260216-00:22:30.000|1128=9|37=EXEC38016|11=ORD62565|17=EXEC17685|150=F|39=2|55=UNH|54=1|38=8600|14=8600|151=0|6=232.89|31=232.89|32=8600|60=20260216-00:22:30.000|10=000|
+Buy 16900 shares of HD at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=6397|52=20260216-00:22:30.000|1128=9|11=ORD44760|21=1|55=HD|54=1|38=16900|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 16900 shares of HD at limit price $220.54
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=7455|52=20260216-00:22:30.000|1128=9|11=ORD47388|21=1|55=HD|54=1|38=16900|40=2|44=220.54|59=0|60=20260216-00:22:30.000|10=000|
+Sell 16900 shares of HD at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=6931|52=20260216-00:22:30.000|1128=9|11=ORD82845|21=1|55=HD|54=2|38=16900|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 16900 shares of HD at limit price $220.54
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=7974|52=20260216-00:22:30.000|1128=9|11=ORD30289|21=1|55=HD|54=2|38=16900|40=2|44=220.54|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 9800 HD shares at $183.52
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=959|52=20260216-00:22:30.000|1128=9|37=EXEC85914|11=ORD81066|17=EXEC17989|150=F|39=2|55=HD|54=1|38=9800|14=9800|151=0|6=183.52|31=183.52|32=9800|60=20260216-00:22:30.000|10=000|
+Buy 76600 shares of PG at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=822|52=20260216-00:22:30.000|1128=9|11=ORD86569|21=1|55=PG|54=1|38=76600|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 76600 shares of PG at limit price $191.12
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=7812|52=20260216-00:22:30.000|1128=9|11=ORD75909|21=1|55=PG|54=1|38=76600|40=2|44=191.12|59=0|60=20260216-00:22:30.000|10=000|
+Sell 76600 shares of PG at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=8702|52=20260216-00:22:30.000|1128=9|11=ORD30635|21=1|55=PG|54=2|38=76600|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 76600 shares of PG at limit price $191.12
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=932|52=20260216-00:22:30.000|1128=9|11=ORD76562|21=1|55=PG|54=2|38=76600|40=2|44=191.12|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 4200 PG shares at $433.1
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=1123|52=20260216-00:22:30.000|1128=9|37=EXEC87992|11=ORD18907|17=EXEC98501|150=F|39=2|55=PG|54=1|38=4200|14=4200|151=0|6=433.1|31=433.1|32=4200|60=20260216-00:22:30.000|10=000|
+Buy 88300 shares of JNJ at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1965|52=20260216-00:22:30.000|1128=9|11=ORD84668|21=1|55=JNJ|54=1|38=88300|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Buy 88300 shares of JNJ at limit price $155.84
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=4034|52=20260216-00:22:30.000|1128=9|11=ORD85880|21=1|55=JNJ|54=1|38=88300|40=2|44=155.84|59=0|60=20260216-00:22:30.000|10=000|
+Sell 88300 shares of JNJ at market price
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=9741|52=20260216-00:22:30.000|1128=9|11=ORD15209|21=1|55=JNJ|54=2|38=88300|40=1|59=0|60=20260216-00:22:30.000|10=000|
+Sell 88300 shares of JNJ at limit price $155.84
+8=FIXT.1.1|9=200|35=D|49=SENDER01|56=TARGET01|34=1344|52=20260216-00:22:30.000|1128=9|11=ORD64948|21=1|55=JNJ|54=2|38=88300|40=2|44=155.84|59=0|60=20260216-00:22:30.000|10=000|
+Execution report for filled order of 33700 JNJ shares at $312.65
+8=FIXT.1.1|9=280|35=8|49=TARGET01|56=SENDER01|34=8566|52=20260216-00:22:30.000|1128=9|37=EXEC51467|11=ORD44179|17=EXEC36772|150=F|39=2|55=JNJ|54=1|38=33700|14=33700|151=0|6=312.65|31=312.65|32=33700|60=20260216-00:22:30.000|10=000|
+Market data subscription request for AAPL
+8=FIXT.1.1|9=160|35=V|49=SENDER01|56=TARGET01|34=5148|52=20260216-00:22:30.000|1128=9|262=MDREQ41285|263=1|264=0|265=1|267=2|269=0|269=1|146=1|55=AAPL|10=000|
+Market data subscription request for GOOGL
+8=FIXT.1.1|9=160|35=V|49=SENDER01|56=TARGET01|34=4352|52=20260216-00:22:30.000|1128=9|262=MDREQ61876|263=1|264=0|265=1|267=2|269=0|269=1|146=1|55=GOOGL|10=000|
+Market data subscription request for MSFT
+8=FIXT.1.1|9=160|35=V|49=SENDER01|56=TARGET01|34=2145|52=20260216-00:22:30.000|1128=9|262=MDREQ98039|263=1|264=0|265=1|267=2|269=0|269=1|146=1|55=MSFT|10=000|
+Market data subscription request for AMZN
+8=FIXT.1.1|9=160|35=V|49=SENDER01|56=TARGET01|34=4916|52=20260216-00:22:30.000|1128=9|262=MDREQ69929|263=1|264=0|265=1|267=2|269=0|269=1|146=1|55=AMZN|10=000|
+Market data subscription request for TSLA
+8=FIXT.1.1|9=160|35=V|49=SENDER01|56=TARGET01|34=5181|52=20260216-00:22:30.000|1128=9|262=MDREQ19508|263=1|264=0|265=1|267=2|269=0|269=1|146=1|55=TSLA|10=000|
+Logon message to initiate FIX session with heartbeat interval 30 seconds
+8=FIXT.1.1|9=100|35=A|49=SENDER01|56=TARGET01|34=1|52=20260216-00:22:30.000|98=0|108=30|1137=9|553=user1|554=pass123|10=000|
+Heartbeat message to confirm connection is alive
+8=FIXT.1.1|9=60|35=0|49=SENDER01|56=TARGET01|34=153|52=20260216-00:22:30.000|10=000|
+Cancel an existing order for AAPL
+8=FIXT.1.1|9=150|35=F|49=SENDER01|56=TARGET01|34=7509|52=20260216-00:22:30.000|1128=9|11=CANCEL91416|41=ORD83792|37=EXEC23104|55=AAPL|54=1|38=100|60=20260216-00:22:30.000|10=000|
+
+# FIX Protocol Concepts
+The FIX (Financial Information eXchange) protocol is an electronic communications protocol for international real-time exchange of securities transaction information.
+FIX 5.0 SP2 is the latest stable version. It uses FIXT 1.1 as the session layer protocol, separating application and session concerns.
+In FIX 5.0, the session protocol (FIXT.1.1) is decoupled from the application protocol (FIX 5.0 SP2). BeginString(8) is always FIXT.1.1, and ApplVerID(1128) indicates the application version.
+
+# Message Structure
+Every FIX message consists of: StandardHeader + Body + StandardTrailer.
+The StandardHeader always begins with BeginString(8), BodyLength(9), MsgType(35).
+The StandardTrailer always ends with CheckSum(10).
+Fields are delimited by SOH (ASCII 01) in production, often shown as | in documentation.
+
+# Session Layer (FIXT 1.1)
+Session messages handle connection management: Logon(A), Logout(5), Heartbeat(0), TestRequest(1), ResendRequest(2), SequenceReset(4), Reject(3).
+Each side maintains an independent outgoing sequence number, starting at 1.
+The Logon message must be the first message sent by each side after TCP connection.
+
+# Order Lifecycle
+New orders are submitted via NewOrderSingle(D). The sell-side responds with ExecutionReport(8).
+Orders can be modified via OrderCancelReplaceRequest(G) or canceled via OrderCancelRequest(F).
+If a cancel or modify is rejected, OrderCancelReject(9) is returned.
+The ExecType(150) field in ExecutionReport indicates what happened: F=Trade, 0=New, 4=Canceled, 8=Rejected.
+OrdStatus(39) tracks the cumulative state: 0=New, 1=PartiallyFilled, 2=Filled, 4=Canceled, 8=Rejected.
+
+# Market Data
+MarketDataRequest(V) subscribes to market data. SubscriptionRequestType(263): 0=Snapshot, 1=SnapshotAndUpdates.
+MarketDataSnapshotFullRefresh(W) provides a complete book. MarketDataIncrementalRefresh(X) provides updates.
+MDEntryType(269): 0=Bid, 1=Offer, 2=Trade, 4=OpeningPrice, 5=ClosingPrice.
+
+# Key Differences: FIX 4.x vs FIX 5.0 SP2
+FIX 4.x uses BeginString like 'FIX.4.2'. FIX 5.0 SP2 uses BeginString 'FIXT.1.1' with ApplVerID(1128)=9.
+FIX 5.0 introduced the Parties component block for identifying counterparties.
+ExecTransType(20) was deprecated in FIX 5.0. ExecType(150) values were rationalized.
+FIX 5.0 SP2 added enhanced derivatives support, strategy parameters, and improved market data.

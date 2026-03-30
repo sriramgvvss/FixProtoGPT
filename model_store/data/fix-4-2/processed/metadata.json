@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-02-20 22:40:07",
+  "versions_included": [
+    "4.2"
+  ],
+  "total_lines": 30554,
+  "train_samples": 27496,
+  "val_samples": 3058,
+  "train_tokens": 4386381,
+  "val_tokens": 487705,
+  "vocab_size": 1257
+}
