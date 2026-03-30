@@ -60,7 +60,6 @@ A GPT-style decoder-only transformer for generating, validating, explaining, and
 - FIX ↔ JSON/XML bidirectional conversion
 - Per-environment isolation (dev, qa, preprod, prod)
 - Structured audit logging (server, user actions, debug) with daily rotation
-- TensorBoard integration
 
 ---
 
@@ -729,7 +728,7 @@ make format             # black + isort
 ## Dependencies
 
 **Core:**
-torch, numpy, pyyaml, tqdm, tensorboard, requests, safetensors, flask, flask-cors, beautifulsoup4, lxml, rich, rjsmin, python-dotenv, pdfplumber, python-docx, openpyxl, tokenizers
+torch, numpy, pyyaml, tqdm, requests, flask, flask-cors, beautifulsoup4, lxml, rich, rjsmin, python-dotenv, pdfplumber, python-docx, openpyxl, tokenizers
 
 **Dev (optional):**
 pytest, pytest-cov, pytest-xdist, black, flake8, isort, mypy

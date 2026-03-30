@@ -1,11 +1,11 @@
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
-build-backend = "setuptools.backends._legacy:_Backend"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "fixprotogpt"
 version = "1.0.0"
-description = "FIX Protocol Language Model — GPT-style decoder-only transformer for FIX 5.0 SP2"
+description = "FIX Protocol Language Model — GPT-style decoder-only transformer for FIX 4.2, 4.4, 5.0 SP2, and Latest"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
@@ -16,9 +16,7 @@ dependencies = [
     "numpy>=1.24.0",
     "pyyaml>=6.0",
     "tqdm>=4.65.0",
-    "tensorboard>=2.12.0",
     "requests>=2.31.0",
-    "safetensors>=0.3.0",
 
     "flask>=2.3.0",
     "flask-cors>=4.0.0",
