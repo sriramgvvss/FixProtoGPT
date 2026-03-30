@@ -410,8 +410,7 @@ Slash-command REPL interface:
 
 | Command | Description |
 | ------- | ----------- |
-| `/generate <prompt>` | Generate FIX message |
-| `/nl2fix <text>` | Natural language → FIX |
+| `/generate <prompt>` | Generate FIX message (also accepts natural language) |
 | `/load [version]` | Load model for version |
 | `/version [version]` | Switch active version |
 | `/temperature <val>` | Set temperature |
